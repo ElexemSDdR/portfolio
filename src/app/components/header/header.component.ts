@@ -1,10 +1,9 @@
-import { Component } from '@angular/core'
-import { NavComponent } from '@components/nav/nav.component'
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [NavComponent],
+  imports: [],
   templateUrl: './header.component.html',
-  styles: ``,
+  styleUrl: './header.components.css',
 })
 export class HeaderComponent {}

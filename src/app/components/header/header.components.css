@@ -1,0 +1,21 @@
+@keyframes header-animation {
+  from {
+    margin-top: 0;
+    margin-inline: 0;
+    border-radius: 0;
+    backdrop-filter: brightness(50%) blur(10px);
+  }
+
+  to {
+    margin-top: 8px;
+    margin-inline: 16px;
+    border-radius: 20px;
+    backdrop-filter: brightness(50%) blur(10px);
+  }
+}
+
+header {
+  animation: header-animation linear forwards;
+  animation-range-end: 20%;
+  animation-timeline: scroll(block root);
+}
