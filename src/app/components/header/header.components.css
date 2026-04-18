@@ -4,6 +4,8 @@
     margin-inline: 0;
     border-radius: 0;
     backdrop-filter: brightness(50%) blur(10px);
+    border: 0 solid black;
+    padding-block: 2.5rem;
   }
 
   to {
@@ -11,6 +13,18 @@
     margin-inline: 16px;
     border-radius: 20px;
     backdrop-filter: brightness(50%) blur(10px);
+    border: 4px solid rgba(0, 0, 0, 0.274);
+    padding-block: 1.5rem;
+  }
+}
+
+@keyframes header-anchor-animation {
+  from {
+    padding-block: 2rem;
+  }
+
+  to {
+    padding-block: 1.25rem;
   }
 }
 
@@ -18,4 +32,16 @@ header {
   animation: header-animation linear forwards;
   animation-range-end: 20%;
   animation-timeline: scroll(block root);
+
+  nav {
+    ul {
+      li {
+        a {
+          animation: header-anchor-animation linear forwards;
+          animation-range-end: 20%;
+          animation-timeline: scroll(block root);
+        }
+      }
+    }
+  }
 }
