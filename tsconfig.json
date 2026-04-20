@@ -14,11 +14,10 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@views/*": ["src/app/views/*"],
-      "@components/*": ["src/app/components/*"],
+      "@/*": ["./src/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@components/*": ["./src/app/components/*"]
     }
   },
   "angularCompilerOptions": {

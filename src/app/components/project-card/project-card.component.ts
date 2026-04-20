@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core'
-
 @Component({
   selector: 'app-project-card',
   imports: [],
@@ -7,9 +6,9 @@ import { Component, input } from '@angular/core'
   styles: ``,
 })
 export class ProjectCardComponent {
-  previewImage = input()
-  title = input<string>()
-  url = input<string>()
-  description = input<string>()
+  previewImage = input.required<string>()
+  title = input.required<string>()
+  url = input.required<string>()
+  description = input.required<string>()
   technologies = input.required<string[]>()
 }

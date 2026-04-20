@@ -1,1 +1,14 @@
-<p>projects works!</p>
+<section class="flex flex-col items-center justify-center gap-10" id="projects">
+  <h2 class="text-5xl">Mis proyectos</h2>
+  <section class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3">
+    @for (project of projects; track $index) {
+      <app-project-card
+        [technologies]="project.technologies"
+        [title]="project.title"
+        [url]="project.url"
+        [previewImage]="project.previewImage"
+        [description]="project.description"
+      ></app-project-card>
+    }
+  </section>
+</section>
