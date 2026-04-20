@@ -1,1 +1,18 @@
-<p>project-card works!</p>
+<article class="flex flex-col">
+  <img
+    src={{previewImage()}}
+    alt={{title()}}
+    class=""
+  >
+  <h4>
+    <a href={{url()}}>{{title()}}</a>
+  </h4>
+  <p>{{description()}}</p>
+  <hr>
+  <h5>Used technologies</h5>
+  <ul>
+    @for (technology of technologies(); track technologies()) {
+    <li>{{technology}}</li>
+    }
+  </ul>
+</article>

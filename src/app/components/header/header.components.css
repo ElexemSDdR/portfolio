@@ -1,11 +1,40 @@
+@property --animation-per-scroll-range {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 10%;
+}
+
+@property --header-padding-block-initial {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 3dvw;
+}
+
+@property --header-padding-block-final {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2dvw;
+}
+
+@property --anchor-padding-block-initial {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 2dvw;
+}
+
+@property --anchor-padding-block-final {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1.25dvw;
+}
+
 @keyframes header-animation {
   from {
     margin-top: 0;
     margin-inline: 0;
     border-radius: 0;
     backdrop-filter: brightness(50%) blur(10px);
-    border: 0 solid black;
-    padding-block: 2.5rem;
+    padding-block: var(--header-padding-block-initial);
   }
 
   to {
@@ -13,24 +42,24 @@
     margin-inline: 16px;
     border-radius: 20px;
     backdrop-filter: brightness(50%) blur(10px);
-    border: 4px solid rgba(0, 0, 0, 0.274);
-    padding-block: 1.5rem;
+    box-shadow: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+    padding-block: var(--header-padding-block-final)
   }
 }
 
 @keyframes header-anchor-animation {
   from {
-    padding-block: 2rem;
+    padding-block: var(--anchor-padding-block-initial)
   }
 
   to {
-    padding-block: 1.25rem;
+    padding-block: var(--anchor-padding-block-final)
   }
 }
 
 header {
   animation: header-animation linear forwards;
-  animation-range-end: 20%;
+  animation-range-end: var(--animation-per-scroll-range);
   animation-timeline: scroll(block root);
 
   nav {
@@ -38,8 +67,9 @@ header {
       li {
         a {
           animation: header-anchor-animation linear forwards;
-          animation-range-end: 20%;
+          animation-range-end: var(--animation-per-scroll-range);
           animation-timeline: scroll(block root);
+          transition: box-shadow .2s ease-in-out;
         }
       }
     }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, input } from '@angular/core'
 
 @Component({
   selector: 'app-project-card',
@@ -6,4 +6,10 @@ import { Component } from '@angular/core'
   templateUrl: './project-card.component.html',
   styles: ``,
 })
-export class ProjectCardComponent {}
+export class ProjectCardComponent {
+  previewImage = input()
+  title = input<string>()
+  url = input<string>()
+  description = input<string>()
+  technologies = input.required<string[]>()
+}
