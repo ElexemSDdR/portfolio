@@ -19,3 +19,5 @@ export const TechnologiesColors = {
 } as const
 
 export type Technology = keyof typeof TechnologiesColors
+
+export type Icon = 'github' | 'linkedin'

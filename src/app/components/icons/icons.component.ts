@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import type { Icon } from '@/env.d'
+import { Component, input } from '@angular/core'
 
 @Component({
   selector: 'app-icons',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core'
   templateUrl: './icons.component.html',
   styles: ``,
 })
-export class IconsComponent {}
+export class IconsComponent {
+  name = input.required<Icon>()
+}
