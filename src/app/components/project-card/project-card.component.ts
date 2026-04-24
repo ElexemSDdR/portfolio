@@ -1,4 +1,6 @@
+import { type Technology, TechnologiesColors } from '@/env.d'
 import { Component, input } from '@angular/core'
+
 @Component({
   selector: 'app-project-card',
   imports: [],
@@ -11,4 +13,9 @@ export class ProjectCardComponent {
   url = input.required<string>()
   description = input.required<string>()
   technologies = input.required<string[]>()
+  animateSide = input<string>('animate-fade-in-right')
+  bgColorForTechnology = (technology: string) => {
+    if (technology.includes('.')) technology = technology.split('.').join('')
+    return TechnologiesColors[technology as Technology]
+  }
 }

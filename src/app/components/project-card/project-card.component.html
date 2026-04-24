@@ -1,24 +1,33 @@
-<article class="flex flex-col rounded-4xl pb-2 overflow-hidden bg-[#12141f] relative shadow-[0_0_16px_#121212]">
+<article
+  class="flex flex-col rounded-4xl pb-2 overflow-hidden bg-[#12141f] relative shadow-[0_0_16px_#121212] animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 transition-transform {{
+    animateSide()
+  }}"
+>
   <a href="{{ url() }}" target="_blank" class="relative">
     <img
       src="{{ previewImage() }}"
-      alt="{{ title() }}"
+      alt="Imágen de vista previa para {{ title() }}"
       loading="lazy"
       class="aspect-video h-auto"
     />
     <div
-      class="absolute bottom-0 left-0 w-full h-[60%] bg-linear-to-b from-transparent to-[#12141f]"
+      class="absolute transition-colors bottom-0 left-0 w-full h-full bg-linear-to-b from-transparent to-[#12141f] hover:bg-black/20"
     ></div>
   </a>
-  <h4 class="text-3xl px-4 my-2 mt-3 font-bold">
+  <h4 class="text-xl xl:text-3xl px-4 my-2 mt-3 font-bold">
     <a href="{{ url() }}" target="_blank">{{ title() }}</a>
   </h4>
   <p class="px-4 text-sm font-light text-gray-300 text-pretty">{{ description() }}</p>
   <div class="h-px w-[95%] mx-auto bg-white/55 rounded-full my-4"></div>
-  <!-- <h5 class="text-2xl px-4 mb-1">Used technologies</h5> -->
   <ul class="flex gap-2 px-4 mb-2 flex-wrap">
     @for (technology of technologies(); track technologies()) {
-      <li class="rounded-full border bg-gray-900 border-gray-500 text-gray-300 py-1 px-3 text-sm align-middle text-center">{{ technology }}</li>
+      <li
+        class="rounded-full border-2 text-gray-300 py-1 px-3 text-sm align-middle text-center {{
+          bgColorForTechnology(technology.toLowerCase())
+        }}"
+      >
+        {{ technology }}
+      </li>
     }
   </ul>
 </article>
