@@ -15,7 +15,7 @@ export class ProjectsComponent {
       previewImage: '/projectPreviewImages/calculadora-amigurumis.png',
       description:
         'Una app web que sirve para sacar el precio de un amigurumi dependiendo el precio de la lana, hilo y más variantes, costos extras como llaveros y demás y relleno. Depende del peso (en Kg) del amigurumi',
-      technologies: ['HTML', 'CSS', 'TypeScript', 'EJS', 'Express.js', 'MongoDB', 'Git'],
+      technologies: ['HTML', 'CSS', 'TypeScript', 'EJS', 'Express.js', 'MongoDB', 'Git', 'Node.js'],
     },
   ]
 }

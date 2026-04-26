@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-header',
@@ -6,4 +6,19 @@ import { Component } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrl: './header.components.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isOpen = false
+
+  protected toggle() {
+    this.isOpen = !this.isOpen
+  }
+
+  protected showAndHideLinks = () => {
+    const $headerLinks = document.querySelector('#headerLinks')
+    $headerLinks?.classList.toggle('not-sm:-translate-x-96')
+
+    if ($headerLinks?.classList.contains('not-sm:-translate-x-96') && this.isOpen) {
+      this.toggle()
+    }
+  }
+}

@@ -1,14 +1,48 @@
 <header
   class="backdrop-blur-2xl backdrop-brightness-50 bg-black/15 text-white fixed px-2 top-0 right-0 left-0 text-2xl z-999"
 >
-  <nav class="w-full flex justify-center items-center">
-    <ul
-      class="flex flex-wrap justify-evenly w-full [&>li>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:h-full [&>li>a]:rounded-full [&>li>a]:py-5 [&>li>a]:px-8 [&>li>a]:cursor-pointer [&>li>a]:text-xl [&>li>a]:lg:text-[26px]"
+  <nav class="w-full flex justify-between flex-row sm:justify-center sm:items-center relative">
+    <button
+      (click)="toggle()"
+      (click)="showAndHideLinks()"
+      class="self-center transition-shadow hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] rounded-full p-3 mx-4 cursor-pointer sm:hidden"
     >
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#experience">Experiencia</a></li>
-      <li><a href="#projects">Proyectos</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
+      <svg viewBox="0 0 24 24" fill="none" class="menu-icon size-10" [class.open]="isOpen">
+        <path
+          class="line l1"
+          d="M4 6H20"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          class="line l2"
+          d="M4 12H20"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <path
+          class="line l3"
+          d="M4 18H20"
+          stroke="#ffffff"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+    <div
+      class="not-sm:absolute not-sm:rounded-[20px] not-sm:sm:relative not-sm:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] not-sm:backdrop-blur-3xl not-sm:px-2 not-sm:py-1 not-sm:bg-[#19021c]/95 not-sm:my-16 not-sm:transition-transform not-sm:-translate-x-96"
+      id="headerLinks"
+    >
+      <ul
+        class="sm:flex flex-wrap justify-evenly w-full sm:visible sm:flex-row flex-col [&>li]:my-2 [&>li>a]:sm:m-0 [&>li>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:h-full [&>li>a]:rounded-full [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:sm:py-5 [&>li>a]:sm:px-8 [&>li>a]:cursor-pointer [&>li>a]:text-xl [&>li>a]:lg:text-[26px]"
+      >
+        <li><a (click)="showAndHideLinks()" href="#about">Sobre mí</a></li>
+        <li><a (click)="showAndHideLinks()" href="#experience">Experiencia</a></li>
+        <li><a (click)="showAndHideLinks()" href="#projects">Proyectos</a></li>
+        <li><a (click)="showAndHideLinks()" href="#contact">Contacto</a></li>
+      </ul>
+    </div>
   </nav>
 </header>

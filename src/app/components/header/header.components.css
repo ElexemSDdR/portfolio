@@ -1,29 +1,29 @@
 @property --animation-per-scroll-range {
-  syntax: "<percentage>";
+  syntax: '<percentage>';
   inherits: false;
   initial-value: 10%;
 }
 
 @property --header-padding-block-initial {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 3dvw;
 }
 
 @property --header-padding-block-final {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 2dvw;
 }
 
 @property --anchor-padding-block-initial {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 2dvw;
 }
 
 @property --anchor-padding-block-final {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 1.25dvw;
 }
@@ -42,18 +42,20 @@
     margin-inline: 16px;
     border-radius: 20px;
     backdrop-filter: brightness(50%) blur(10px);
-    box-shadow: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
-    padding-block: var(--header-padding-block-final)
+    box-shadow:
+      2px 3px 20px black,
+      3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+    padding-block: var(--header-padding-block-final);
   }
 }
 
 @keyframes header-anchor-animation {
   from {
-    padding-block: var(--anchor-padding-block-initial)
+    padding-block: var(--anchor-padding-block-initial);
   }
 
   to {
-    padding-block: var(--anchor-padding-block-final)
+    padding-block: var(--anchor-padding-block-final);
   }
 }
 
@@ -69,9 +71,44 @@ header {
           animation: header-anchor-animation linear forwards;
           animation-range-end: var(--animation-per-scroll-range);
           animation-timeline: scroll(block root);
-          transition: box-shadow .2s ease-in-out;
+          transition: box-shadow 0.2s ease-in-out;
         }
       }
+    }
+  }
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  .line {
+    transition:
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.25s ease;
+  }
+
+  .l1 {
+    transform-origin: 12px 6px;
+  }
+  .l2 {
+    transform-origin: 12px 12px;
+  }
+  .l3 {
+    transform-origin: 12px 18px;
+  }
+
+  &.open {
+    .l1 {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .l2 {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .l3 {
+      transform: translateY(-6px) rotate(-45deg);
     }
   }
 }

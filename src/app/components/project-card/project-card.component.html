@@ -1,5 +1,5 @@
 <article
-  class="flex flex-col rounded-4xl pb-2 overflow-hidden bg-[#12141f] relative shadow-[0_0_16px_#121212] animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 transition-transform {{
+  class="flex flex-col rounded-4xl pb-2 overflow-hidden bg-[#12141f] relative shadow-[0_0_16px_#121212] animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 active:scale-105 active:z-30 active:-translate-y-2 transition-transform {{
     animateSide()
   }}"
 >
@@ -11,10 +11,12 @@
       class="aspect-video h-auto"
     />
     <div
-      class="absolute transition-colors bottom-0 left-0 w-full h-full bg-linear-to-b from-transparent to-[#12141f] hover:bg-black/20"
+      class="absolute transition-colors bottom-0 left-0 w-full h-full bg-linear-to-b from-transparent to-[#12141f] hover:bg-black/20 active:bg-black/20"
     ></div>
   </a>
-  <h4 class="text-xl xl:text-3xl px-4 my-2 mt-3 font-bold">
+  <h4
+    class="text-xl xl:text-3xl px-4 my-2 mt-3 font-bold hover:text-blue-400 active:text-blue-400 transition-colors"
+  >
     <a href="{{ url() }}" target="_blank">{{ title() }}</a>
   </h4>
   <p class="px-4 text-sm font-light text-gray-300 text-pretty">{{ description() }}</p>
