@@ -1,10 +1,4 @@
-export interface Project {
-  previewImage: string
-  title: string
-  url: string
-  description: string
-  technologies: string[]
-}
+type AnimateSide = 'animate-fade-in-right' | 'animate-fade-in-left'
 
 export const TechnologiesColors = {
   html: 'bg-[hsl(18,87%,55%)]/70 border-[hsl(18,87%,15%)]',
@@ -18,6 +12,14 @@ export const TechnologiesColors = {
   astrojs: 'bg-[hsl(324,75%,56%)]/70 border-[hsl(324,75%,16%)]',
 } as const
 
-export type Technology = keyof typeof TechnologiesColors
-
 export type Icon = 'github' | 'linkedin'
+
+export type Technology = keyof typeof TechnologiesColors
+export interface Project {
+  previewImage: string
+  title: string
+  url: string
+  description: string
+  technologies: string[]
+  github?: string
+}

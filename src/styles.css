@@ -9,3 +9,11 @@
   font-weight: 500;
   font-style: normal;
 }
+
+.google-sans-code-font {
+  font-family: 'Google Sans Code', monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: 'MONO' 1;
+}

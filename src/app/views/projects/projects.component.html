@@ -3,11 +3,7 @@
   <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
     @for (project of projects; track project.title) {
       <app-project-card
-        [technologies]="project.technologies"
-        [title]="project.title"
-        [url]="project.url"
-        [previewImage]="project.previewImage"
-        [description]="project.description"
+        [project]="project"
         [animateSide]="$index % 2 == 0 ? 'animate-fade-in-right' : 'animate-fade-in-left'"
       ></app-project-card>
     }
