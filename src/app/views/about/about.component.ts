@@ -1,6 +1,6 @@
-import { AboutMeDescriptionComponent } from '@/app/components/about-me-description/about-me-description.component'
-import { SocialMediaSectionComponent } from '@/app/components/social-media-section/social-media-section.component'
 import { Component } from '@angular/core'
+import { AboutMeDescriptionComponent } from '@components/about-me-description/about-me-description.component'
+import { SocialMediaSectionComponent } from '@components/social-media-section/social-media-section.component'
 
 @Component({
   selector: 'app-about',

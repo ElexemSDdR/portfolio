@@ -1,8 +1,9 @@
+import { IconsComponent } from '@/app/components/icons/icons.component'
 import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [IconsComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.components.css',
 })

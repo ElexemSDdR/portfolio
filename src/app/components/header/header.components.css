@@ -65,13 +65,15 @@ header {
   animation-timeline: scroll(block root);
 
   nav {
-    ul {
-      li {
-        a {
-          animation: header-anchor-animation linear forwards;
-          animation-range-end: var(--animation-per-scroll-range);
-          animation-timeline: scroll(block root);
-          transition: box-shadow 0.2s ease-in-out;
+    div {
+      ul {
+        li {
+          a {
+            animation: header-anchor-animation linear forwards;
+            animation-range-end: var(--animation-per-scroll-range);
+            animation-timeline: scroll(block root);
+            transition: box-shadow 0.2s ease-in-out;
+          }
         }
       }
     }

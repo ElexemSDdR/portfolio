@@ -9,4 +9,5 @@ import { Component, input } from '@angular/core'
 })
 export class IconsComponent {
   name = input.required<Icon>()
+  className = input<string>()
 }

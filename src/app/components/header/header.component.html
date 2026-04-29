@@ -36,7 +36,7 @@
       id="headerLinks"
     >
       <ul
-        class="sm:flex flex-wrap justify-evenly w-full sm:visible sm:flex-row flex-col [&>li]:my-2 [&>li>a]:sm:m-0 [&>li>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:h-full [&>li>a]:rounded-full [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:sm:py-5 [&>li>a]:sm:px-8 [&>li>a]:cursor-pointer [&>li>a]:text-xl [&>li>a]:lg:text-[26px]"
+        class="sm:flex flex-wrap justify-evenly w-full sm:visible sm:flex-row flex-col [&>li]:my-3 [&>li>a]:sm:m-0 [&>li>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:h-full [&>li>a]:rounded-full [&>li>a]:px-3 [&>li>a]:relative [&>li>a]:py-2 [&>li>a]:sm:py-5 [&>li>a]:sm:px-8 [&>li>a]:cursor-pointer [&>li>a]:text-xl [&>li>a]:lg:text-[26px]"
       >
         <li><a (click)="showAndHideLinks()" href="#about">Sobre mí</a></li>
         <li><a (click)="showAndHideLinks()" href="#experience">Experiencia</a></li>
@@ -44,5 +44,18 @@
         <li><a (click)="showAndHideLinks()" href="#contact">Contacto</a></li>
       </ul>
     </div>
+    <span
+      class="sm:hidden visible self-center flex mx-4 [&>a]:transition-shadow [&>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>a]:rounded-full [&>a]:p-4"
+    >
+      <a
+        href="https://www.linkedin.com/in/valent%C3%ADn-dom%C3%ADnguez-tapia-a13130372"
+        target="_blank"
+      >
+        <app-icons name="linkedin" className="size-10"></app-icons>
+      </a>
+      <a href="https://github.com/ElexemSDdR" target="_blank">
+        <app-icons name="github" className="size-10"></app-icons>
+      </a>
+    </span>
   </nav>
 </header>
