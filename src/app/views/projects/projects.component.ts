@@ -1,5 +1,5 @@
 import { ProjectCardComponent } from '@/app/components/project-card/project-card.component'
-import type { Project } from '@/env'
+import type { Project } from '@/env.d'
 import { Component } from '@angular/core'
 @Component({
   selector: 'app-projects',
@@ -16,7 +16,6 @@ export class ProjectsComponent {
       description:
         'Una app web que sirve para calcular el precio de un amigurumi dependiendo el precio de la lana, hilo y más variantes, costos extras como llaveros, etc. y relleno.',
       technologies: ['HTML', 'CSS', 'TypeScript', 'EJS', 'Express.js', 'MongoDB', 'Git', 'Node.js'],
-      github: 'https://github.com/ElexemSDdR/calculadora-de-precios-de-amigurumis',
     },
   ]
 }

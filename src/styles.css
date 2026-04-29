@@ -17,3 +17,17 @@
   font-style: normal;
   font-variation-settings: 'MONO' 1;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  min-height: 100dvh;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(65, 5, 72, 1), transparent 70%),
+    linear-gradient(#000000c6 89%, transparent 100%),
+    linear-gradient(85deg, #1e0224 0%, rgba(65, 5, 72, 1) 50%, #490358 100%) no-repeat center center
+      fixed;
+  background-size: cover;
+}

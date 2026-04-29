@@ -40,7 +40,7 @@
   to {
     margin-top: 8px;
     margin-inline: 16px;
-    border-radius: 20px;
+    border-radius: 30px;
     backdrop-filter: brightness(50%) blur(10px);
     box-shadow:
       2px 3px 20px black,

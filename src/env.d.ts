@@ -1,20 +1,21 @@
-type AnimateSide = 'animate-fade-in-right' | 'animate-fade-in-left'
+export type AnimateSide = 'animate-fade-in-right' | 'animate-fade-in-left'
 
 export const TechnologiesColors = {
-  html: 'bg-[hsl(18,87%,55%)]/70 border-[hsl(18,87%,15%)]',
-  css: 'bg-[hsl(270,50%,40%)]/70 border-[hsl(270,50%,05%)]',
-  typescript: 'bg-[hsl(212,87%,58%)]/70 border-[hsl(212,87%,18%)]',
-  ejs: 'bg-[hsl(60,52%,49%)]/70 text-gray-100 border-[hsl(60,52%,19%)]',
-  mongodb: 'bg-[hsl(121,37%,45%)]/70 border-[hsl(121,37%,15%)]',
-  git: 'bg-[hsl(14,91%,54%)]/70 border-[hsl(14,91%,14%)]',
-  expressjs: 'bg-gray-900 border-gray-950',
-  nodejs: 'bg-[hsl(122,39%,49%)]/70 border-[hsl(122,39%,19%)]',
-  astrojs: 'bg-[hsl(324,75%,56%)]/70 border-[hsl(324,75%,16%)]',
+  html: 'bg-[hsl(18,87%,55%)]/10 text-[hsl(18,87%,70%)] ',
+  css: 'bg-[hsl(270,50%,40%)]/10 text-[hsl(270,50%,70%)] ',
+  typescript: 'bg-[hsl(212,87%,58%)]/10 text-[hsl(212,87%,70%)] ',
+  ejs: 'bg-[hsl(60,52%,49%)]/10 text-[hsl(60,52%,70%)] ',
+  mongodb: 'bg-[hsl(121,37%,45%)]/10 text-[hsl(121,37%,70%)] ',
+  git: 'bg-[hsl(14,91%,54%)]/10 text-[hsl(14,91%,70%)] ',
+  expressjs: 'bg-gray-900 text-gray-200 border-gray-950',
+  nodejs: 'bg-[hsl(122,39%,49%)]/10 text-[hsl(122,39%,70%)] ',
+  astrojs: 'bg-[hsl(324,75%,56%)]/10 text-[hsl(324,75%,70%)] ',
 } as const
 
 export type Icon = 'github' | 'linkedin'
 
 export type Technology = keyof typeof TechnologiesColors
+
 export interface Project {
   previewImage: string
   title: string
@@ -22,4 +23,10 @@ export interface Project {
   description: string
   technologies: string[]
   github?: string
+}
+
+export interface Experience {
+  jobName: string
+  date: string
+  jobPosition: string
 }
