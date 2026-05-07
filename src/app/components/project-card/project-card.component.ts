@@ -1,7 +1,7 @@
-import { type Technology, AnimateSide, Project, TechnologiesColors } from '@/env.d'
+import { type Technology, AnimateSide, Project, TechnologiesColors } from '@/types'
+import { NgOptimizedImage } from '@angular/common'
 import { Component, input } from '@angular/core'
 import { IconsComponent } from '../icons/icons.component'
-import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-project-card',

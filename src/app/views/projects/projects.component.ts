@@ -1,4 +1,4 @@
-import type { Project } from '@/env.d'
+import type { Project } from '@/types'
 import { Component } from '@angular/core'
 import { ProjectCardComponent } from '@components/project-card/project-card.component'
 @Component({

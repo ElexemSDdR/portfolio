@@ -36,5 +36,5 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "include": ["src/env.d.ts"]
+  "include": ["src/types.ts"]
 }

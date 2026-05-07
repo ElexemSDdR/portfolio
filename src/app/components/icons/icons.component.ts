@@ -1,4 +1,4 @@
-import type { Icon } from '@/env.d'
+import type { Icon } from '@/types'
 import { Component, input } from '@angular/core'
 
 @Component({

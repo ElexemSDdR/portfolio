@@ -1,4 +1,4 @@
-import { Experience } from '@/env.d'
+import { Experience } from '@/types'
 import { Component, computed, input } from '@angular/core'
 
 @Component({
