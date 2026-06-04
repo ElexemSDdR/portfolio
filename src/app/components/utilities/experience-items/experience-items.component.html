@@ -1,5 +1,5 @@
 <ul class="flex flex-col">
-  @for (experience of experiences(); track experience.jobName) {
+  @for (experience of experiences(); track experience.id) {
     <li class="-mx-5 pl-8 xl:mx-64 xl:px-14 relative py-4" id="{{ doUnionLine($index) }}">
       <div class="flex flex-col gap-1">
         <h5 class="text-md xl:text-xl font-bold tracking-normal xl:tracking-wide">

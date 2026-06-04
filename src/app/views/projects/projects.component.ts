@@ -1,8 +1,7 @@
-import { ApiService } from '@/app/services/api.service'
+import { ApiService } from '@services/api.service'
 import type { Project } from '@/types'
 import { Component } from '@angular/core'
 import { ProjectCardComponent } from '@components/utilities/project-card/project-card.component'
-import { Observable } from 'rxjs/internal/Observable'
 
 @Component({
   selector: 'app-projects',
@@ -12,16 +11,16 @@ import { Observable } from 'rxjs/internal/Observable'
 })
 export class ProjectsComponent {
   projects: Project[] = [];
-  req: Observable<Project[]>;
 
   constructor(private portfolioApi: ApiService) {
-    this.req = this.portfolioApi.get('project') as Observable<Project[]>
-    this.req.subscribe({
+    this.portfolioApi.get<Project[]>('project').subscribe({
       next: (data: Project[]) => {
         this.projects = data
       },
-      error: (error) => {},
-      complete: () => {}
-      })
+      error: (error) => {
+        console.error(error)
+      },
+      complete: () => { }
+    })
   }
 }

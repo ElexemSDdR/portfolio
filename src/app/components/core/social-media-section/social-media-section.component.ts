@@ -1,4 +1,4 @@
-import { IconsComponent } from '@/app/components/icons/icons.component'
+import { IconsComponent } from '@components/utilities/icons/icons.component'
 import { Component } from '@angular/core'
 
 @Component({
@@ -7,4 +7,4 @@ import { Component } from '@angular/core'
   templateUrl: './social-media-section.component.html',
   styles: ``,
 })
-export class SocialMediaSectionComponent {}
+export class SocialMediaSectionComponent { }

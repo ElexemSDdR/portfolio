@@ -17,6 +17,7 @@ export type Icon = 'github' | 'linkedin'
 export type Technology = keyof typeof TechnologiesColors
 
 export interface Project {
+  id: string
   previewImage: string
   title: string
   url: string
@@ -26,7 +27,10 @@ export interface Project {
 }
 
 export interface Experience {
+  id: string
   jobName: string
   date: string
   jobPosition: string
 }
+
+export type Schema = 'project' | 'experience'
