@@ -1,6 +1,7 @@
 import { ApiService } from '@services/api.service'
 import type { Project } from '@/types'
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
 import { ProjectCardComponent } from '@components/utilities/project-card/project-card.component'
 
 @Component({
@@ -10,17 +11,10 @@ import { ProjectCardComponent } from '@components/utilities/project-card/project
   styles: ``,
 })
 export class ProjectsComponent {
-  projects: Project[] = [];
+  portfolioApi = inject(ApiService)
 
-  constructor(private portfolioApi: ApiService) {
-    this.portfolioApi.get<Project[]>('project').subscribe({
-      next: (data: Project[]) => {
-        this.projects = data
-      },
-      error: (error) => {
-        console.error(error)
-      },
-      complete: () => { }
-    })
-  }
+  projects = toSignal(
+    this.portfolioApi.get<Project[]>('project'),
+    { initialValue: [] as Project[] }
+  )
 }
