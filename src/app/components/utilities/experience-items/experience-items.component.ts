@@ -1,5 +1,5 @@
-import { Experience } from '@/types'
-import { Component, computed, input } from '@angular/core'
+import { Experience } from '@/types';
+import { Component, computed, input } from '@angular/core';
 
 @Component({
   selector: 'app-experience-items',
@@ -12,7 +12,6 @@ export class ExperienceItemsComponent {
   private lastExperienceIndex = computed(() => this.experiences().length)
 
   doUnionLine = (index: number) => {
-    console.log(this.lastExperienceIndex())
     if (index === 0) {
       return 'first'
     } else if (index === this.lastExperienceIndex() - 1) {

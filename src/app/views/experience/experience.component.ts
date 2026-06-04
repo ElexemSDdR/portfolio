@@ -1,5 +1,7 @@
-import { Component } from '@angular/core'
-import { ExperienceItemsComponent } from '@components/experience-items/experience-items.component'
+import { ApiService } from '@/app/services/api.service';
+import { Experience } from '@/types';
+import { Component } from '@angular/core';
+import { ExperienceItemsComponent } from '@components/experience-items/experience-items.component';
 
 @Component({
   selector: 'app-experience',
@@ -7,18 +9,19 @@ import { ExperienceItemsComponent } from '@components/experience-items/experienc
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
-  experiences = [
-    {
-      jobName: 'La Vianda de Martina (proyecto freelance)',
-      date: '2025 - Actual',
-      jobPosition:
-        'Desarrollador full-stack y diseñador de una página e-commerce e informativa para un emprendimiento, "La vianda de Martina". Proyecto pago en el que diseño la interfaz de la página, la estructura de código y base de datos completa.',
-    },
-    {
-      jobName: 'Nanotorrent (proyecto freelance)',
-      date: '2024 - 2025',
-      jobPosition:
-        'Desarrollador full-stack de la página de descarga de programas gratuitos Nanotorrent. Trabajé junto con otra persona para la clonación de la conocida página de Gamestorrent, utilizando su diseño como base para una decoración propia. El mismo fue abandonado por un tiempo.',
-    },
-  ]
+  experiences: Experience[]
+
+  constructor(private portfolioApi: ApiService) {
+    this.experiences = portfolioApi.getExperiences().subscribe({
+      next: (data) => {
+        this.experiences = data
+      },
+      error: (e) => {
+        console.error(e.message)
+      },
+      complete: () => {
+        console.log('fetch completed')
+      },
+    })
+  }
 }

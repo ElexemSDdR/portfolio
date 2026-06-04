@@ -1,6 +1,8 @@
+import { ApiService } from '@/app/services/api.service'
 import type { Project } from '@/types'
 import { Component } from '@angular/core'
-import { ProjectCardComponent } from '@components/project-card/project-card.component'
+import { ProjectCardComponent } from '@components/utilities/project-card/project-card.component'
+import { Observable } from 'rxjs/internal/Observable'
 @Component({
   selector: 'app-projects',
   imports: [ProjectCardComponent],
@@ -8,14 +10,9 @@ import { ProjectCardComponent } from '@components/project-card/project-card.comp
   styles: ``,
 })
 export class ProjectsComponent {
-  projects: Project[] = [
-    {
-      title: 'Calculadora de precios de amigurumis',
-      url: 'https://calculadora-de-precios-de-amigurumis.vercel.app/',
-      previewImage: '/projectPreviewImages/calculadora-amigurumis.png',
-      description:
-        'Una app web que sirve para calcular el precio de un amigurumi dependiendo el precio de la lana, hilo y más variantes, costos extras como llaveros, etc. y relleno.',
-      technologies: ['HTML', 'CSS', 'TypeScript', 'EJS', 'Express.js', 'MongoDB', 'Git', 'Node.js'],
-    },
-  ]
+  projects: Observable<Project[]>
+
+  constructor(private portfolioApi: ApiService) {
+    this.projects = portfolioApi.getProjects()
+  }
 }

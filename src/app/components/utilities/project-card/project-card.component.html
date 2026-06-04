@@ -3,9 +3,9 @@
     animateSide()
   }}"
 >
-  <a href="{{ project().url }}" target="_blank" class="relative">
+  <a [href]="project().url" target="_blank" class="relative">
     <img
-      ngSrc="{{ project().previewImage }}"
+      [ngSrc]="project().previewImage"
       priority
       width="1200"
       height="750"
@@ -19,11 +19,11 @@
   <h4
     class="text-xl xl:text-2xl px-4 my-2 mt-3 font-bold hover:text-blue-400 active:text-blue-400 transition-colors"
   >
-    <a href="{{ project().url }}" target="_blank">{{ project().title }}</a>
+    <a [href]="project().url" target="_blank">{{ project().title }}</a>
   </h4>
   @if (project().github) {
     <a
-      href="{{ project().github }}"
+      [href]="project().github"
       target="_blank"
       rel="noopener noreferrer"
       class="group flex w-fit items-center gap-2 mb-3 px-2 mx-4 py-2 rounded-full border-zinc-800 bg-zinc-950 text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-900 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[2px_3px_5px_black,3px_4px_15px_-10px_#52525c_inset] hover:shadow-[2px_3px_20px_black,3px_4px_15px_-10px_#52525c_inset] active:shadow-[2px_3px_20px_black,3px_4px_15px_-10px_#52525c_inset] active:bg-zinc-900 active:border-zinc-900"
@@ -38,11 +38,7 @@
   <div class="h-px w-[95%] mx-auto bg-white/55 rounded-full my-4"></div>
   <ul class="flex gap-2 px-4 mb-2 flex-wrap">
     @for (technology of project().technologies; track technology) {
-      <li
-        class="rounded-full py-1 px-3 text-sm align-middle text-center {{
-          bgColorForTechnology(technology.toLowerCase())
-        }}"
-      >
+      <li [class]="technologyClass(technology.toLowerCase())">
         {{ technology }}
       </li>
     }
