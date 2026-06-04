@@ -1,7 +1,8 @@
 import { ApiService } from '@/app/services/api.service';
 import { Experience } from '@/types';
 import { Component } from '@angular/core';
-import { ExperienceItemsComponent } from '@components/experience-items/experience-items.component';
+import { ExperienceItemsComponent } from '@components/utilities/experience-items/experience-items.component';
+import { Observable } from 'rxjs/internal/Observable'
 
 @Component({
   selector: 'app-experience',
@@ -9,19 +10,17 @@ import { ExperienceItemsComponent } from '@components/experience-items/experienc
   templateUrl: './experience.component.html',
 })
 export class ExperienceComponent {
-  experiences: Experience[]
+  experiences: Experience[] = []
+  req: Observable<Experience[]>
 
   constructor(private portfolioApi: ApiService) {
-    this.experiences = portfolioApi.getExperiences().subscribe({
-      next: (data) => {
+    this.req = this.portfolioApi.get('experience') as Observable<Experience[]>
+    this.req.subscribe({
+      next: (data: Experience[]) => {
         this.experiences = data
       },
-      error: (e) => {
-        console.error(e.message)
-      },
-      complete: () => {
-        console.log('fetch completed')
-      },
-    })
+      error: (error) => {},
+      complete: () => {}
+      })
   }
-}
+  }
