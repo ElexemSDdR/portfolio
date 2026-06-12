@@ -1,17 +1,17 @@
-import { type Technology, AnimateSide, Project, TechnologiesColors } from '@/types';
-import { NgOptimizedImage } from '@angular/common';
-import { Component, input } from '@angular/core';
-import { IconsComponent } from '@components/utilities/icons/icons.component';
+import { type Technology, AnimateSide, Project, TechnologiesColors } from '@/types'
+import { NgOptimizedImage } from '@angular/common'
+import { Component, input } from '@angular/core'
+import { IconsComponent } from '@components/utilities/icons/icons.component'
 
 @Component({
   selector: 'app-project-card',
   imports: [IconsComponent, NgOptimizedImage],
-  templateUrl: './project-card.component.html',
+  templateUrl: './project.component.html',
 })
-export class ProjectCardComponent {
+export class ProjectComponent {
   project = input.required<Project>()
   animateSide = input.required<AnimateSide>()
-  apiUrl = "https://portfolio-backend-nu-lake.vercel.app/"
+  apiUrl = 'https://portfolio-backend-nu-lake.vercel.app/'
 
   technologyClass = (technology: string) => {
     if (technology.includes('.')) technology = technology.split('.').join('')
