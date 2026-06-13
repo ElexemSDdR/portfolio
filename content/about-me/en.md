@@ -1,11 +1,14 @@
 ---
 name: 'Valentín'
 surname: 'Domínguez Tapia'
-github: 'https://github.com/ElexemSDdR'
-linkedin: 'https://www.linkedin.com/in/valent%C3%ADn-dom%C3%ADnguez-tapia-a13130372'
+socialMedia:
+  github: 'https://github.com/ElexemSDdR'
+  linkedin: 'https://www.linkedin.com/in/valent%C3%ADn-dom%C3%ADnguez-tapia-a13130372'
+mail:
+  gmail: 'valentin.domtapia@gmail.com'
+  protonmail: 'elexemsddr@protonmail.com'
 position: 'Desarrollador web frontend y backend'
-mail: 'valentin.domtapia@gmail.com'
-phone-number: '+54 9 280 438-9265'
+phoneNumber: '+54 9 280 438-9265'
 ---
 
 Hola! Soy Valentín, hago desarrollo web tanto frontend como backend. Soy una persona empeñada en

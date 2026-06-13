@@ -2,17 +2,18 @@
   <div class="relative">
     <div class="font-[Google_Sans_Code]">
       <h1 class="text-5xl lg:text-7xl xl:text-8xl xl:my-7 text-green-50 flex flex-col">
-        <span>Valentín</span>
-        <span>Domínguez</span>
-        <span>Tapia</span>
+        <span>{{ translatedAbout.name }}</span>
+        <span>{{ translatedAbout.surname }}</span>
       </h1>
       <h2
         class="text-2xl lg:text-4xl xl:text-5xl font-light text-green-400/75 my-2 [&>span]:font-extrabold [&>span]:text-green-400"
       >
-        Desarrollador web <span>frontend</span> y <span>backend</span>
+        {{ translatedAbout.position }}
       </h2>
     </div>
     <app-social-media-section></app-social-media-section>
   </div>
-  <app-about-me-description></app-about-me-description>
+  <article class="text-sm mt-15 [&>p]:my-[1lh] [&>p>a]:text-blue-500 text-pretty">
+    <markdown [data]="translatedAbout.content"></markdown>
+  </article>
 </section>

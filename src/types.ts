@@ -34,3 +34,5 @@ export interface Experience {
 }
 
 export type Schema = 'project' | 'experience'
+
+export type PossibleLanguages = 'en' | 'es'

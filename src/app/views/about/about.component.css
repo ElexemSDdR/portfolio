@@ -1,0 +1,12 @@
+p {
+  margin-block: 20px;
+
+  a {
+    color: oklch(62.3% 0.214 259.815);
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
