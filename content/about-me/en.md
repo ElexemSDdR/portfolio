@@ -7,7 +7,7 @@ socialMedia:
 mail:
   gmail: 'valentin.domtapia@gmail.com'
   protonmail: 'elexemsddr@protonmail.com'
-position: 'Desarrollador web frontend y backend'
+position: 'Web **frontend** and **backend** developer'
 phoneNumber: '+54 9 280 438-9265'
 ---
 
