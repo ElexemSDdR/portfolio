@@ -31,3 +31,8 @@ body::before {
       fixed;
   background-size: cover;
 }
+
+* {
+  scrollbar-color: #a705cb rgb(96, 18, 105);
+  scrollbar-width: 4px;
+}

@@ -16,18 +16,11 @@
     "module": "preserve",
     "composite": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@views/*": [
-        "./src/app/views/*"
-      ],
-      "@components/*": [
-        "./src/app/components/*"
-      ],
-      "@services/*": [
-        "./src/app/services/*"
-      ]
+      "@/*": ["./src/*"],
+      "@views/*": ["./src/app/views/*"],
+      "@components/*": ["./src/app/components/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@site/content/*": ["./.velite/*"]
     }
   },
   "angularCompilerOptions": {
@@ -45,7 +38,5 @@
       "path": "./tsconfig.spec.json"
     }
   ],
-  "include": [
-    "src/types.ts"
-  ]
+  "include": ["src/types.ts"]
 }

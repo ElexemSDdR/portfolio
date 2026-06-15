@@ -1,10 +1,17 @@
-import { Component } from '@angular/core'
-import { AboutMeDescriptionComponent } from '@components/core/about-me-description/about-me-description.component'
-import { SocialMediaSectionComponent } from '@components/core/social-media-section/social-media-section.component'
+import { SocialMediaButtonComponent } from '@/app/components/utilities/social-media-button/social-media-button.component'
+import { TranslateService } from '@/app/services/translate.service'
+import { AboutMeContent, SocialNetwork } from '@/types'
+import { Component, inject } from '@angular/core'
+import { MarkdownComponent } from 'ngx-markdown'
 
 @Component({
   selector: 'app-about',
-  imports: [SocialMediaSectionComponent, AboutMeDescriptionComponent],
+  imports: [MarkdownComponent, SocialMediaButtonComponent],
   templateUrl: './about.component.html',
 })
-export class AboutComponent { }
+export class AboutComponent {
+  private translateService = inject(TranslateService)
+
+  translatedAbout: AboutMeContent = this.translateService.getTranslatedAboutMe('es')
+  socialNetworks = Object.keys(this.translatedAbout.socialMedia) as SocialNetwork[]
+}

@@ -34,3 +34,19 @@ export interface Experience {
 }
 
 export type Schema = 'project' | 'experience'
+
+export type PossibleLanguages = 'en' | 'es'
+
+export type SocialNetwork = 'github' | 'linkedin'
+
+export type Mail = 'gmail' | 'protonmail'
+export interface AboutMeContent {
+  slug: string
+  name: string
+  surname: string
+  socialMedia: Record<SocialNetwork, string>
+  mail: Record<Mail, string>
+  position: string
+  phoneNumber: string
+  content: string
+}
