@@ -8,7 +8,6 @@ import { MarkdownComponent } from 'ngx-markdown'
   selector: 'app-about',
   imports: [MarkdownComponent, SocialMediaButtonComponent],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css',
 })
 export class AboutComponent {
   private translateService = inject(TranslateService)

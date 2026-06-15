@@ -3,7 +3,7 @@
     <div class="font-[Google_Sans_Code]">
       <h1 class="text-5xl lg:text-7xl xl:text-8xl xl:my-7 text-green-50 flex flex-col">
         <span>{{ translatedAbout.name }}</span>
-        <span>{{ translatedAbout.surname }}</span>
+        <span class="wrap-break-word max-w-90 lg:max-w-130">{{ translatedAbout.surname }}</span>
       </h1>
       <h2
         class="text-2xl lg:text-4xl xl:text-5xl font-light text-green-400/75 my-2 [&>span]:font-extrabold [&>span]:text-green-400"
@@ -17,7 +17,9 @@
       }
     </div>
   </div>
-  <article class="text-sm mt-15 [&>p]:my-[1lh] [&>p>a]:text-blue-500 text-pretty">
-    <markdown [data]="translatedAbout.content"></markdown>
-  </article>
+  <article
+    markdown
+    [data]="translatedAbout.content"
+    class="text-sm mt-15 [&>p]:my-[1lh] [&>p>a]:text-blue-500 text-pretty"
+  ></article>
 </section>
