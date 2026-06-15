@@ -11,7 +11,11 @@
         {{ translatedAbout.position }}
       </h2>
     </div>
-    <app-social-media-section></app-social-media-section>
+    <div class="flex gap-2 my-4">
+      @for (social of socialNetworks; track social) {
+        <app-social-media-button [socialNetwork]="social" />
+      }
+    </div>
   </div>
   <article class="text-sm mt-15 [&>p]:my-[1lh] [&>p>a]:text-blue-500 text-pretty">
     <markdown [data]="translatedAbout.content"></markdown>
