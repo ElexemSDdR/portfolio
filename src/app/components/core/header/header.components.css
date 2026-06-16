@@ -115,3 +115,28 @@ header {
     }
   }
 }
+
+#options-button {
+  anchor-name: --options-button;
+  anchor-scope: unset;
+}
+
+#options-menu {
+  inset: unset;
+  position-area: bottom;
+  position-anchor: --options-button;
+  position-try-fallbacks: --menu-right, --menu-left;
+}
+
+@position-try --menu-right {
+  top: anchor(bottom);
+  position-area: bottom right;
+  justify-self: anchor-center;
+}
+
+@position-try --menu-left {
+  top: anchor(bottom);
+  right: anchor(left);
+  position-area: bottom left;
+  justify-self: anchor-center;
+}

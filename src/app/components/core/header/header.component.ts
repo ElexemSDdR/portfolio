@@ -1,5 +1,5 @@
-import { IconsComponent } from '@components/utilities/icons/icons.component'
 import { Component } from '@angular/core'
+import { IconsComponent } from '@components/utilities/icons/icons.component'
 
 @Component({
   selector: 'app-header',
@@ -15,7 +15,7 @@ export class HeaderComponent {
   }
 
   protected showAndHideLinks = () => {
-    const $headerLinks = document.querySelector('#headerLinks')
+    const $headerLinks = document.querySelector('#header-links')
     $headerLinks?.classList.toggle('not-sm:-translate-x-96')
 
     if ($headerLinks?.classList.contains('not-sm:-translate-x-96') && this.isOpen) {
