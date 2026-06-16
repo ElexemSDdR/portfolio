@@ -7,13 +7,13 @@
 @property --header-padding-block-initial {
   syntax: '<length>';
   inherits: false;
-  initial-value: 3dvw;
+  initial-value: 2dvw;
 }
 
 @property --header-padding-block-final {
   syntax: '<length>';
   inherits: false;
-  initial-value: 2dvw;
+  initial-value: 1dvw;
 }
 
 @property --anchor-padding-block-initial {
@@ -68,7 +68,8 @@ header {
     div {
       ul {
         li {
-          a {
+          a,
+          button {
             animation: header-anchor-animation linear forwards;
             animation-range-end: var(--animation-per-scroll-range);
             animation-timeline: scroll(block root);

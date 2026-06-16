@@ -36,3 +36,8 @@ body::before {
   scrollbar-color: #a705cb rgb(96, 18, 105);
   scrollbar-width: 4px;
 }
+
+select,
+::picker(select) {
+  appearance: base-select;
+}

@@ -36,26 +36,46 @@
       id="headerLinks"
     >
       <ul
-        class="sm:flex flex-wrap justify-evenly w-full sm:visible sm:flex-row flex-col [&>li]:my-3 [&>li>a]:sm:m-0 [&>li>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a]:h-full [&>li>a]:rounded-full [&>li>a]:px-3 [&>li>a]:relative [&>li>a]:py-2 [&>li>a]:sm:py-5 [&>li>a]:sm:px-8 [&>li>a]:cursor-pointer [&>li>a]:text-xl [&>li>a]:lg:text-[26px]"
+        class="sm:flex flex-wrap justify-center lg:justify-evenly w-full sm:visible sm:flex-row flex-col [&>li]:my-1 [&>li]:sm:my-0 [&>li>a,button]:transition-shadow [&>li>a]:flex [&>li>a,button]:sm:m-0 [&>li>a,button]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a,button]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>li>a,button]:h-full [&>li>a,button]:rounded-full [&>li>a,button]:px-3 [&>li>a,button]:relative [&>li>a,button]:w-full [&>li>a,button]:py-2 [&>li>a]:sm:py-3 [&>li>a,button]:sm:px-8 [&>li>a,button]:cursor-pointer [&>li>a,button]:text-xl [&>li>a,button]:lg:text-[26px]"
       >
         <li><a (click)="showAndHideLinks()" href="#about">Sobre mí</a></li>
         <li><a (click)="showAndHideLinks()" href="#projects">Proyectos</a></li>
         <li><a (click)="showAndHideLinks()" href="#experience">Experiencia</a></li>
         <li><a (click)="showAndHideLinks()" href="#contact">Contacto</a></li>
+        <li class="sm:hidden w-11/12 mx-auto rounded-full h-px bg-gray-400"></li>
+        <li class="hidden sm:flex justify-self-center md:justify-self-end self-center z-50">
+          <button class="my-0 py-2">
+            <app-icons name="options" className="size-8 md:size-10" />
+          </button>
+        </li>
+        <li>
+          <div
+            class="sm:hidden flex flex-col gap-1 text-xl [&>button]:flex [&>button]:gap-6 [&>button]:justify-between [&>button]:w-full [&>button]:items-center [&>button>span]:group-hover:rotate-12 [&>button>span]:transition-transform"
+          >
+            <button id="change-translation" class="group">
+              Traducir
+              <span>
+                <app-icons name="translate" className="size-6 md:size-10"></app-icons>
+              </span>
+            </button>
+            <button id="toggle-theme" class="group">Cambiar tema</button>
+            <button id="print-cv" class="group">
+              Descargar CV
+              <span>
+                <app-icons name="print-cv" className="size-6 md:size-10"></app-icons>
+              </span>
+            </button>
+          </div>
+        </li>
       </ul>
     </div>
     <span
       class="sm:hidden visible self-center flex mx-4 [&>a]:transition-shadow [&>a]:hover:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>a]:active:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] [&>a]:rounded-full [&>a]:p-4"
     >
-      <a
-        href="https://www.linkedin.com/in/valent%C3%ADn-dom%C3%ADnguez-tapia-a13130372"
-        target="_blank"
-      >
-        <app-icons name="linkedin" className="size-10"></app-icons>
-      </a>
-      <a href="https://github.com/ElexemSDdR" target="_blank">
-        <app-icons name="github" className="size-10"></app-icons>
-      </a>
+      <button
+        id="options"
+        class="w-40 h-10 rounded-full py-2 px-4 [&>option]:rounded-full [&>option]:py-2 [&>option]:text-black"
+      ></button>
     </span>
   </nav>
 </header>

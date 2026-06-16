@@ -12,7 +12,7 @@ export const TechnologiesColors = {
   astrojs: 'bg-[hsl(324,75%,56%)]/10 text-[hsl(324,75%,70%)] ',
 } as const
 
-export type Icon = 'github' | 'linkedin'
+export type Icon = 'github' | 'linkedin' | 'print-cv' | 'translate' | 'options'
 
 export type Technology = keyof typeof TechnologiesColors
 
