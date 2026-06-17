@@ -42,9 +42,7 @@
     margin-inline: 16px;
     border-radius: 30px;
     backdrop-filter: brightness(50%) blur(10px);
-    box-shadow:
-      2px 3px 20px black,
-      3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+    box-shadow: light-dark(var(--header-links-shadow-light), var(--header-links-shadow-dark));
     padding-block: var(--header-padding-block-final);
   }
 }
@@ -116,27 +114,33 @@ header {
   }
 }
 
-#options-button {
-  anchor-name: --options-button;
+#options-button,
+#toggle-theme {
   anchor-scope: unset;
 }
 
-#options-menu {
+#options-button {
+  anchor-name: --options-button;
+}
+
+#toggle-theme {
+  anchor-name: --change-theme;
+}
+
+#options-menu,
+#themes {
   inset: unset;
+}
+
+#options-menu {
   position-area: bottom;
   position-anchor: --options-button;
   position-try-fallbacks: --menu-right, --menu-left;
 }
 
-@position-try --menu-right {
+#themes {
+  position: fixed;
+  position-anchor: --change-theme;
   top: anchor(bottom);
-  position-area: bottom right;
-  justify-self: anchor-center;
-}
-
-@position-try --menu-left {
-  top: anchor(bottom);
-  right: anchor(left);
-  position-area: bottom left;
   justify-self: anchor-center;
 }

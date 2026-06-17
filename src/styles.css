@@ -3,6 +3,19 @@
 @import 'tailwindcss';
 @import 'tailwind-animations';
 
+:root {
+  /* Light theme color */
+  --header-links-shadow-light: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+
+  /* Dark theme color */
+  --header-links-shadow-dark: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+}
+
+* {
+  scrollbar-color: #a705cb rgb(96, 18, 105);
+  scrollbar-width: 4px;
+}
+
 .comfortaa-gfont {
   font-family: 'Comfortaa', sans-serif;
   font-optical-sizing: auto;
@@ -30,11 +43,6 @@ body::before {
     linear-gradient(85deg, #1e0224 0%, rgba(65, 5, 72, 1) 50%, #490358 100%) no-repeat center center
       fixed;
   background-size: cover;
-}
-
-* {
-  scrollbar-color: #a705cb rgb(96, 18, 105);
-  scrollbar-width: 4px;
 }
 
 select,

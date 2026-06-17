@@ -1,4 +1,6 @@
-import { Component } from '@angular/core'
+import { ThemeService } from '@/app/services/theme.service'
+import { Theme } from '@/types'
+import { Component, inject } from '@angular/core'
 import { IconsComponent } from '@components/utilities/icons/icons.component'
 
 @Component({
@@ -8,9 +10,11 @@ import { IconsComponent } from '@components/utilities/icons/icons.component'
   styleUrl: './header.components.css',
 })
 export class HeaderComponent {
+  private themeService = inject(ThemeService)
+
   isOpen = false
 
-  protected toggle() {
+  protected toggleBurguerMenu() {
     this.isOpen = !this.isOpen
   }
 
@@ -19,7 +23,11 @@ export class HeaderComponent {
     $headerLinks?.classList.toggle('not-sm:-translate-x-96')
 
     if ($headerLinks?.classList.contains('not-sm:-translate-x-96') && this.isOpen) {
-      this.toggle()
+      this.toggleBurguerMenu()
     }
+  }
+
+  changeTheme(theme: Theme) {
+    this.themeService.changeTheme(theme)
   }
 }

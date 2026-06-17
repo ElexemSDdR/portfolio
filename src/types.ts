@@ -12,7 +12,16 @@ export const TechnologiesColors = {
   astrojs: 'bg-[hsl(324,75%,56%)]/10 text-[hsl(324,75%,70%)] ',
 } as const
 
-export type Icon = 'github' | 'linkedin' | 'print-cv' | 'translate' | 'options'
+export type Icon =
+  | 'github'
+  | 'linkedin'
+  | 'print-cv'
+  | 'translate'
+  | 'options'
+  | 'selector'
+  | 'sun'
+  | 'moon'
+  | 'sistem-config-theme'
 
 export type Technology = keyof typeof TechnologiesColors
 
@@ -35,7 +44,9 @@ export interface Experience {
 
 export type Schema = 'project' | 'experience'
 
-export type PossibleLanguages = 'en' | 'es'
+export type Languages = 'en' | 'es'
+
+export type Theme = 'dark' | 'light'
 
 export type SocialNetwork = 'github' | 'linkedin'
 
