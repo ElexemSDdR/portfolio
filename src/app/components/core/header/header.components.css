@@ -42,7 +42,7 @@
     margin-inline: 16px;
     border-radius: 30px;
     backdrop-filter: brightness(50%) blur(10px);
-    box-shadow: light-dark(var(--header-links-shadow-light), var(--header-links-shadow-dark));
+    box-shadow: var(--header-shadow);
     padding-block: var(--header-padding-block-final);
   }
 }
@@ -66,8 +66,7 @@ header {
     div {
       ul {
         li {
-          a,
-          button {
+          a {
             animation: header-anchor-animation linear forwards;
             animation-range-end: var(--animation-per-scroll-range);
             animation-timeline: scroll(block root);
@@ -114,6 +113,16 @@ header {
   }
 }
 
+@position-try --monitor-media {
+  top: anchor(top);
+  right: anchor(left);
+}
+
+@position-try --phone-media {
+  top: anchor(bottom);
+  left: anchor(right);
+}
+
 #options-button,
 #toggle-theme {
   anchor-scope: unset;
@@ -135,12 +144,17 @@ header {
 #options-menu {
   position-area: bottom;
   position-anchor: --options-button;
-  position-try-fallbacks: --menu-right, --menu-left;
 }
 
 #themes {
   position: fixed;
   position-anchor: --change-theme;
-  top: anchor(bottom);
-  justify-self: anchor-center;
+  /* top: anchor(bottom);
+  left: anchor(right); */
+  position-area: center left;
+  position-try-fallbacks:
+    flip-block,
+    flip-inline,
+    flip-block flip-inline;
+  /* position-try-fallbacks: --monitor-media, --phone-media; */
 }

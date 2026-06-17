@@ -14,19 +14,6 @@ export class HeaderComponent {
 
   isOpen = false
 
-  protected toggleBurguerMenu() {
-    this.isOpen = !this.isOpen
-  }
-
-  protected showAndHideLinks = () => {
-    const $headerLinks = document.querySelector('#header-links')
-    $headerLinks?.classList.toggle('not-sm:-translate-x-96')
-
-    if ($headerLinks?.classList.contains('not-sm:-translate-x-96') && this.isOpen) {
-      this.toggleBurguerMenu()
-    }
-  }
-
   changeTheme(theme: Theme) {
     this.themeService.changeTheme(theme)
   }

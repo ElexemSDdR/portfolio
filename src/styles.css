@@ -5,10 +5,17 @@
 
 :root {
   /* Light theme color */
-  --header-links-shadow-light: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+  --header-shadow-color-light: rgb(99, 48, 84);
+  --header-links-and-options-bg-color-light: #f1c6f7;
 
   /* Dark theme color */
-  --header-links-shadow-dark: 2px 3px 20px black, 3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+  --header-shadow-color-dark: rgba(218, 133, 192, 1);
+  --header-links-and-options-bg-color-dark: #19021c;
+
+  --header-shadow:
+    2px 3px 20px black,
+    3px 4px 15px -10px light-dark(var(--header-shadow-color-light), var(--header-shadow-color-dark))
+      inset;
 }
 
 * {
