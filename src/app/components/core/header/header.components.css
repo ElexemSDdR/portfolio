@@ -114,13 +114,15 @@ header {
 }
 
 @position-try --monitor-media {
-  top: anchor(top);
-  right: anchor(left);
+  /* top: anchor(top);
+  right: anchor(left); */
+  position-area: center left;
 }
 
 @position-try --phone-media {
-  top: anchor(bottom);
-  left: anchor(right);
+  /* top: anchor(bottom);
+  left: anchor(right); */
+  position-area: center right;
 }
 
 #options-button,
@@ -147,14 +149,14 @@ header {
 }
 
 #themes {
-  position: fixed;
   position-anchor: --change-theme;
-  /* top: anchor(bottom);
-  left: anchor(right); */
-  position-area: center left;
-  position-try-fallbacks:
-    flip-block,
-    flip-inline,
-    flip-block flip-inline;
-  /* position-try-fallbacks: --monitor-media, --phone-media; */
+  top: anchor(center);
+  right: anchor(left);
+}
+
+@media screen and (width <= 650px) {
+  #themes {
+    left: anchor(right);
+    position-area: center right;
+  }
 }

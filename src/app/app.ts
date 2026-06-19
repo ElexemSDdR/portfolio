@@ -12,17 +12,15 @@ import { ThemeService } from '@services/theme.service'
   styleUrl: './app.css',
 })
 export class App {
-  getDeviceTheme = () => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
-    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light'
-    return 'dark'
-  }
-  private currentTheme = (window.localStorage.getItem('theme') ?? this.getDeviceTheme()) as Theme
   private themeService = inject(ThemeService)
+  private currentTheme = (window.localStorage.getItem('theme') ??
+    this.themeService.getDeviceTheme()) as Theme
 
   constructor() {
     window.localStorage.setItem('language', navigator.languages[0].split('-')[0])
-    window.localStorage.setItem('theme', this.currentTheme)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      this.themeService.changeTheme('system')
+    })
 
     this.themeService.changeTheme(this.currentTheme)
   }

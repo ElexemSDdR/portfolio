@@ -57,7 +57,7 @@
           <div
             popover="auto"
             id="options-menu"
-            class="not-sm:flex max-w-xs p-2 w-full sm:open:flex static sm:fixed bg-[#19021c]/95 text-white rounded-[20px] sm:mt-4 flex-col gap-1 text-lg sm:text-md [&>button]:flex [&>button]:gap-6 [&>button]:justify-between [&>button]:w-full [&>button]:sm:mx-3 [&>button]:px-2 [&>button]:py-4 [&>button]:items-center [&>button>span]:group-hover:rotate-12 [&>button>span]:transition-transform sm:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset]"
+            class="not-sm:flex max-w-xs p-2 w-full sm:open:flex relative sm:fixed bg-[#19021c]/95 text-white rounded-[20px] sm:mt-4 flex-col gap-1 text-lg sm:text-md [&>button]:flex [&>button]:gap-6 [&>button]:justify-between [&>button]:w-full [&>button]:sm:mx-3 [&>button]:px-2 [&>button]:py-4 [&>button]:items-center [&>button>span]:group-hover:rotate-12 [&>button>span]:transition-transform sm:shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset]"
           >
             <button id="change-translation" class="group">
               Traducir
@@ -81,9 +81,9 @@
             <div
               id="themes"
               popover
-              class="px-2 sm:px-3 md:max-w-2xs max-w-3xs open:flex flex-col sm:gap-2 w-full bg-[#19021c]/95 text-white shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] rounded-[20px] sm:my-4 py-2 [&>button]:text-lg [&>button]:text-left [&>button]:flex [&>button]:justify-between [&>button]:px-4 [&>button]:py-4 [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:items-center"
+              class="px-2 sm:px-3 fixed mx-5 sm:mx-3 md:max-w-2xs max-w-3xs open:flex flex-col sm:gap-2 w-full bg-[#19021c]/95 text-white shadow-[4px_6px_20px_black,2px_4px_15px_-10px_#cdcdcddf_inset] rounded-[20px] my-8 sm:my-0 py-2 [&>button]:text-lg [&>button]:text-left [&>button]:flex [&>button]:justify-between [&>button]:px-4 [&>button]:py-4 [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:items-center"
             >
-              <button>
+              <button (click)="changeTheme('system')">
                 Ajuste del dispositivo
                 <app-icons name="sistem-config-theme" className="size-6 md:size-10" />
               </button>

@@ -46,7 +46,7 @@ export type Schema = 'project' | 'experience'
 
 export type Languages = 'en' | 'es'
 
-export type Theme = 'dark' | 'light'
+export type Theme = 'dark' | 'light' | 'system'
 
 export type SocialNetwork = 'github' | 'linkedin'
 
