@@ -1,3 +1,4 @@
+import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
 import type { Project } from '@/types'
 import { Component, inject } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
@@ -6,7 +7,7 @@ import { ApiService } from '@services/api.service'
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectComponent],
+  imports: [ProjectComponent, SectionContainerComponent],
   templateUrl: './projects.component.html',
   styles: ``,
 })

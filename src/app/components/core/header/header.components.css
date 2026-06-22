@@ -7,13 +7,13 @@
 @property --header-padding-block-initial {
   syntax: '<length>';
   inherits: false;
-  initial-value: 3dvw;
+  initial-value: 2dvw;
 }
 
 @property --header-padding-block-final {
   syntax: '<length>';
   inherits: false;
-  initial-value: 2dvw;
+  initial-value: 1dvw;
 }
 
 @property --anchor-padding-block-initial {
@@ -42,9 +42,7 @@
     margin-inline: 16px;
     border-radius: 30px;
     backdrop-filter: brightness(50%) blur(10px);
-    box-shadow:
-      2px 3px 20px black,
-      3px 4px 15px -10px rgba(218, 133, 192, 1) inset;
+    box-shadow: var(--header-shadow);
     padding-block: var(--header-padding-block-final);
   }
 }
@@ -68,7 +66,8 @@ header {
     div {
       ul {
         li {
-          a {
+          a,
+          #options-btn {
             animation: header-anchor-animation linear forwards;
             animation-range-end: var(--animation-per-scroll-range);
             animation-timeline: scroll(block root);
@@ -80,37 +79,73 @@ header {
   }
 }
 
-.menu-icon {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-
-  .line {
-    transition:
-      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.25s ease;
-  }
-
+.group:has(+ .peer:popover-open) {
   .l1 {
-    transform-origin: 12px 6px;
+    transform: translateY(6px) rotate(45deg);
   }
   .l2 {
-    transform-origin: 12px 12px;
+    opacity: 0;
+    transform: scaleX(0);
   }
   .l3 {
-    transform-origin: 12px 18px;
+    transform: translateY(-6px) rotate(-45deg);
   }
+}
 
-  &.open {
-    .l1 {
-      transform: translateY(6px) rotate(45deg);
-    }
-    .l2 {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    .l3 {
-      transform: translateY(-6px) rotate(-45deg);
-    }
+@position-try --monitor-media {
+  /* top: anchor(top);
+  right: anchor(left); */
+  position-area: center left;
+}
+
+@position-try --phone-media {
+  /* top: anchor(bottom);
+  left: anchor(right); */
+  position-area: center right;
+}
+
+#options-button,
+#toggle-theme {
+  anchor-scope: unset;
+}
+
+#options-button {
+  anchor-name: --options-button;
+}
+
+#toggle-theme {
+  anchor-name: --change-theme;
+}
+
+#options-menu,
+#themes {
+  inset: unset;
+}
+
+#options-menu {
+  position-area: bottom;
+  position-anchor: --options-button;
+}
+
+#themes {
+  position-anchor: --change-theme;
+  top: anchor(center);
+  right: anchor(left);
+}
+
+@media screen and (width <= 650px) {
+  #themes {
+    left: anchor(right);
+    position-area: center right;
+  }
+}
+
+@media screen and (660px <= width <= 840px) {
+  #themes {
+    margin-block: 10px;
+    top: anchor(bottom);
+    left: anchor(center);
+    right: anchor(center);
+    position-area: center bottom;
   }
 }

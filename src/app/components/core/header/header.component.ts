@@ -1,5 +1,7 @@
+import { ThemeService } from '@/app/services/theme.service'
+import { Theme } from '@/types'
+import { Component, inject } from '@angular/core'
 import { IconsComponent } from '@components/utilities/icons/icons.component'
-import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-header',
@@ -8,18 +10,11 @@ import { Component } from '@angular/core'
   styleUrl: './header.components.css',
 })
 export class HeaderComponent {
+  private themeService = inject(ThemeService)
+
   isOpen = false
 
-  protected toggle() {
-    this.isOpen = !this.isOpen
-  }
-
-  protected showAndHideLinks = () => {
-    const $headerLinks = document.querySelector('#headerLinks')
-    $headerLinks?.classList.toggle('not-sm:-translate-x-96')
-
-    if ($headerLinks?.classList.contains('not-sm:-translate-x-96') && this.isOpen) {
-      this.toggle()
-    }
+  changeTheme(theme: Theme) {
+    this.themeService.changeTheme(theme)
   }
 }
