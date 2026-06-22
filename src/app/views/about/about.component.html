@@ -1,18 +1,18 @@
-<section class="pt-40 2xl:pt-75 animate-blurred-fade-in" id="about">
+<section class="animate-blurred-fade-in pt-40 2xl:pt-75" id="about">
   <div class="relative">
     <div class="font-[Google_Sans_Code]">
-      <h1 class="text-5xl lg:text-7xl xl:text-8xl xl:my-7 text-green-50 flex flex-col">
+      <h1 class="text-name flex flex-col text-5xl lg:text-7xl xl:my-7 xl:text-8xl">
         <span>{{ translatedAbout.name }}</span>
-        <span class="wrap-break-word max-w-90 lg:max-w-130">{{ translatedAbout.surname }}</span>
+        <span class="max-w-90 wrap-break-word lg:max-w-130">{{ translatedAbout.surname }}</span>
       </h1>
       <h2
         markdown
-        class="text-2xl lg:text-4xl xl:text-5xl font-light text-green-400/75 my-2 [&>p>strong]:font-extrabold [&>p>strong]:text-green-400"
+        class="text-job-position/75 [&>p>strong]:text-job-position my-2 text-2xl font-light lg:text-4xl xl:text-5xl [&>p>strong]:font-extrabold"
       >
         {{ translatedAbout.position }}
       </h2>
     </div>
-    <div class="flex gap-2 my-4">
+    <div class="my-4 flex gap-2">
       @for (social of socialNetworks; track social) {
         <app-social-media-button [socialNetwork]="social" />
       }
@@ -21,6 +21,6 @@
   <article
     markdown
     [data]="translatedAbout.content"
-    class="text-sm mt-15 [&>p]:my-[1lh] [&>p>a]:text-blue-500 text-pretty"
+    class="text-primary-text [&>p>a]:text-about-me-links mt-15 text-sm text-pretty [&>p]:my-[1lh]"
   ></article>
 </section>

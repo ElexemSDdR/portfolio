@@ -1,0 +1,12 @@
+<section
+  [id]="id()"
+  [class]="
+    tailwindMerge([
+      'animate-fade-in-up timeline-view animate-range-[entry_25%_contain_20%] flex w-full flex-col',
+      className(),
+    ])
+  "
+>
+  <h3 class="text-primary-text my-4 text-center text-4xl 2xl:text-5xl">{{ title() }}</h3>
+  <ng-content />
+</section>

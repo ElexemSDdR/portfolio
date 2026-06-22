@@ -1,11 +1,11 @@
 <article
-  class="flex flex-col rounded-4xl pb-2 overflow-hidden bg-[#12141f] relative shadow-[0_0_16px_#121212] animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 active:scale-105 active:z-30 active:-translate-y-2 transition-transform {{
+  class="flex flex-col rounded-4xl pb-2 text-primary-text overflow-hidden bg-project-card-bg relative shadow-project-card animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 active:scale-105 active:z-30 active:-translate-y-2 transition-transform {{
     animateSide()
   }}"
 >
   <a [href]="project().url" target="_blank" class="relative">
     <img
-      ngSrc="{{apiUrl}}{{project().previewImage}}"
+      ngSrc="{{ apiUrl }}{{ project().previewImage }}"
       priority
       width="1200"
       height="750"
@@ -13,11 +13,11 @@
       class="aspect-auto h-auto"
     />
     <div
-      class="absolute transition-colors bottom-0 left-0 w-full h-full bg-linear-to-b from-transparent to-[#12141f] hover:bg-black/20 active:bg-black/20"
+      class="to-project-card-bg absolute bottom-0 left-0 h-full w-full bg-linear-to-b from-transparent transition-colors hover:bg-black/20 active:bg-black/20"
     ></div>
   </a>
   <h4
-    class="text-xl xl:text-2xl px-4 my-2 mt-3 font-bold hover:text-blue-400 active:text-blue-400 transition-colors"
+    class="hover:text-about-me-links active:text-about-me-links my-2 mt-3 px-4 text-xl font-bold transition-colors xl:text-2xl"
   >
     <a [href]="project().url" target="_blank">{{ project().title }}</a>
   </h4>
@@ -26,7 +26,7 @@
       [href]="project().github"
       target="_blank"
       rel="noopener noreferrer"
-      class="group flex w-fit items-center gap-2 mb-3 px-2 mx-4 py-2 rounded-full border-zinc-800 bg-zinc-950 text-zinc-400 hover:text-white hover:bg-zinc-900 hover:border-zinc-900 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[2px_3px_5px_black,3px_4px_15px_-10px_#52525c_inset] hover:shadow-[2px_3px_20px_black,3px_4px_15px_-10px_#52525c_inset] active:shadow-[2px_3px_20px_black,3px_4px_15px_-10px_#52525c_inset] active:bg-zinc-900 active:border-zinc-900"
+      class="group hover:shadow-project-card-hover active:shadow-project-card-hover mx-4 mb-3 flex w-fit items-center gap-2 rounded-full border-zinc-800 bg-zinc-950 px-2 py-2 text-zinc-400 shadow-[2px_3px_5px_black,3px_4px_15px_-10px_#52525c_inset] transition-all duration-300 hover:scale-105 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white active:scale-95 active:border-zinc-900 active:bg-zinc-900"
     >
       <span class="transition-transform group-hover:rotate-12">
         <app-icons name="github"></app-icons>
@@ -34,9 +34,11 @@
       <span class="text-xs font-medium">Repositorio</span>
     </a>
   }
-  <p class="px-4 text-sm font-light text-gray-300 text-pretty">{{ project().description }}</p>
-  <div class="h-px w-[95%] mx-auto bg-white/55 rounded-full my-4"></div>
-  <ul class="flex gap-2 px-4 mb-2 flex-wrap">
+  <p class="text-project-card-description px-4 text-sm font-light text-pretty">
+    {{ project().description }}
+  </p>
+  <div class="mx-auto my-4 h-px w-[95%] rounded-full bg-[light-dark(black,white)]/55"></div>
+  <ul class="mb-2 flex flex-wrap gap-2 px-4">
     @for (technology of project().technologies; track technology) {
       <li [class]="technologyClass(technology.toLowerCase())">
         {{ technology }}
