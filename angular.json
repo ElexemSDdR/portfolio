@@ -12,7 +12,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "type": "component",
-          "style": "css",
+          "style": "none",
           "skipTests": true
         },
         "@schematics/angular:service": {
