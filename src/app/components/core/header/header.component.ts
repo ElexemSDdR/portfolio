@@ -13,8 +13,10 @@ export class HeaderComponent {
   private themeService = inject(ThemeService)
 
   isOpen = false
+  currentTheme = this.themeService.getCurrentTheme()
 
   changeTheme(theme: Theme) {
     this.themeService.changeTheme(theme)
+    window.location.reload()
   }
 }

@@ -121,6 +121,10 @@ header {
   right: anchor(left);
 }
 
+.active {
+  box-shadow: var(--shadow-header-links);
+}
+
 @media screen and (width <= 650px) {
   #themes {
     left: anchor(right);
