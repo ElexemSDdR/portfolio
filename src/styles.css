@@ -86,26 +86,26 @@ body::before {
   --color-experience-date: light-dark(var(--color-taupe-800), var(--color-gray-300));
 
   /* Project card colors */
-  --color-project-card-bg: light-dark(hsl(231, 45%, 70%), hsl(231, 27%, 10%));
+  --color-project-card-bg: light-dark(hsl(231, 45%, 90%), hsl(231, 27%, 10%));
   --color-project-card-description: light-dark(var(--color-taupe-800), var(--color-gray-300));
 
   /* Technologies badges */
-  --color-html-bg: light-dark(hsla(18, 87%, 35%, 75%), hsla(18, 87%, 55%, 10%));
-  --color-html-fg: light-dark(hsl(18, 87%, 80%), hsl(18, 87%, 70%));
-  --color-css-bg: light-dark(hsla(270, 50%, 40%, 75%), hsla(270, 50%, 40%, 10%));
-  --color-css-fg: light-dark(hsl(270, 50%, 80%), hsl(270, 50%, 70%));
-  --color-typescript-bg: light-dark(hsla(212, 87%, 58%, 85%), hsla(212, 87%, 58%, 10%));
-  --color-typescript-fg: light-dark(hsl(212, 87%, 80%), hsl(212, 87%, 70%));
-  --color-ejs-bg: light-dark(hsla(60, 52%, 49%, 85%), hsla(60, 52%, 49%, 10%));
-  --color-ejs-fg: light-dark(hsl(60, 52%, 20%), hsl(60, 52%, 70%));
-  --color-mongodb-bg: light-dark(hsla(121, 37%, 45%, 75%), hsla(121, 37%, 45%, 10%));
-  --color-mongodb-fg: light-dark(hsl(121, 37%, 80%), hsl(121, 37%, 70%));
-  --color-git-bg: light-dark(hsla(14, 91%, 54%, 85%), hsla(14, 91%, 54%, 10%));
-  --color-git-fg: light-dark(hsl(14, 91%, 90%), hsl(14, 91%, 70%));
-  --color-expressjs-bg: light-dark(var(--color-gray-900), var(--color-gray-900));
-  --color-expressjs-fg: light-dark(var(--color-gray-200), var(--color-gray-200));
-  --color-nodejs-bg: light-dark(hsla(122, 39%, 49%, 85%), hsla(122, 39%, 49%, 10%));
-  --color-nodejs-fg: light-dark(hsl(122, 39%, 80%), hsl(122, 39%, 70%));
+  --color-html-bg: light-dark(hsl(21 76% 82%), hsla(18, 87%, 55%, 10%));
+  --color-html-fg: light-dark(hsl(24 58% 31%), hsl(18, 87%, 70%));
+  --color-css-bg: light-dark(hsl(271 47% 84%), hsla(270, 50%, 40%, 10%));
+  --color-css-fg: light-dark(hsl(277 29% 44%), hsl(270, 50%, 70%));
+  --color-typescript-bg: light-dark(hsla(212, 87%, 58%, 42%), hsla(212, 87%, 58%, 10%));
+  --color-typescript-fg: light-dark(hsl(212, 87%, 30%), hsl(212, 87%, 70%));
+  --color-ejs-bg: light-dark(hsl(48 72% 83%), hsla(60, 52%, 49%, 10%));
+  --color-ejs-fg: light-dark(hsl(49 44% 40%), hsl(60, 52%, 70%));
+  --color-mongodb-bg: light-dark(hsl(127 35% 73%), hsla(121, 37%, 45%, 10%));
+  --color-mongodb-fg: light-dark(hsl(122 21% 35%), hsl(121, 37%, 70%));
+  --color-git-bg: light-dark(hsl(19 20% 78%), hsla(14, 91%, 54%, 10%));
+  --color-git-fg: light-dark(hsl(17 18% 40%), hsl(14, 91%, 70%));
+  --color-expressjs-bg: light-dark(hsl(223 10% 78%), var(--color-gray-900));
+  --color-expressjs-fg: light-dark(var(--color-taupe-800), var(--color-gray-200));
+  --color-nodejs-bg: light-dark(hsl(91 35% 76%), hsla(122, 39%, 49%, 10%));
+  --color-nodejs-fg: light-dark(hsl(106 30% 30%), hsl(122, 39%, 70%));
   --color-astrojs-bg: light-dark(hsla(324, 75%, 56%, 75%), hsla(324, 75%, 56%, 10%));
   --color-astrojs-fg: light-dark(hsl(324, 75%, 80%), hsl(324, 75%, 70%));
 

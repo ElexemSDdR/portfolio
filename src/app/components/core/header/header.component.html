@@ -76,11 +76,11 @@
             <a
               id="print-cv"
               href="/cvs/cv-english.pdf"
-              class="group hover:shadow-bg-links-header flex w-full items-center justify-between px-2 py-4 transition-shadow sm:px-8"
+              class="group hover:shadow-header-links flex w-full items-center justify-between rounded-full px-2 py-4 transition-shadow sm:px-8"
             >
               Mirá mi CV
-              <span>
-                <app-icons name="print-cv" className="size-6 md:size-10"></app-icons>
+              <span class="transition-transform group-hover:rotate-12">
+                <app-icons name="cv" className="size-6 md:size-10"></app-icons>
               </span>
             </a>
             <button id="toggle-theme" class="group peer" popovertarget="themes">
@@ -103,7 +103,7 @@
                 Ajuste del dispositivo
                 <app-icons
                   name="sistem-config-theme"
-                  className="size-6 md:size-10 transition-transform group-hover:-rotate-12"
+                  className="size-6 md:size-10 transition-transform group-hover:rotate-12"
                 />
               </button>
               <button
@@ -114,7 +114,7 @@
                 Oscuro
                 <app-icons
                   name="moon"
-                  className="size-6 md:size-10 [&>g>path]:stroke-fg-links-header transition-transform group-hover:-rotate-12"
+                  className="size-6 md:size-10 [&>g>path]:stroke-fg-links-header transition-transform group-hover:rotate-12"
                 />
               </button>
               <button
@@ -125,7 +125,7 @@
                 Claro
                 <app-icons
                   name="sun"
-                  className="size-6 md:size-10 transition-transform group-hover:-rotate-12"
+                  className="size-6 md:size-10 transition-transform group-hover:rotate-12"
                 />
               </button>
             </div>

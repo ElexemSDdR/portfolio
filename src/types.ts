@@ -1,21 +1,21 @@
 export type AnimateSide = 'animate-fade-in-right' | 'animate-fade-in-left'
 
 export const TechnologiesColors = {
-  html: 'bg-html-bg text-html-fg font-semibold ',
-  css: 'bg-css-bg text-css-fg font-semibold ',
-  typescript: 'bg-typescript-bg text-typescript-fg font-semibold ',
-  ejs: 'bg-ejs-bg text-ejs-fg font-semibold ',
-  mongodb: 'bg-mongodb-bg text-mongodb-fg font-semibold ',
-  git: 'bg-git-bg text-git-fg font-semibold ',
-  expressjs: 'bg-gray-900 text-gray-200 border-gray-950 font-semibold ',
-  nodejs: 'bg-nodejs-bg text-nodejs-fg font-semibold ',
-  astrojs: 'bg-astrojs-bg text-astrojs-fg font-semibold ',
+  html: 'bg-html-bg text-html-fg font-extrabold ',
+  css: 'bg-css-bg text-css-fg font-extrabold ',
+  typescript: 'bg-typescript-bg text-typescript-fg font-extrabold ',
+  ejs: 'bg-ejs-bg text-ejs-fg font-extrabold ',
+  mongodb: 'bg-mongodb-bg text-mongodb-fg font-extrabold ',
+  git: 'bg-git-bg text-git-fg font-extrabold ',
+  expressjs: 'bg-expressjs-bg text-expressjs-fg border-expressjs-bg font-extrabold ',
+  nodejs: 'bg-nodejs-bg text-nodejs-fg font-extrabold ',
+  astrojs: 'bg-astrojs-bg text-astrojs-fg font-extrabold ',
 } as const
 
 export type Icon =
   | 'github'
   | 'linkedin'
-  | 'print-cv'
+  | 'cv'
   | 'translate'
   | 'options'
   | 'selector'
