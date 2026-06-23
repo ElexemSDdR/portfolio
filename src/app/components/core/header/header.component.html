@@ -43,12 +43,12 @@
       id="header-links"
     >
       <ul
-        class="text-fg-links-header [&>li>a,button]:hover:shadow-header-links [&>li>a,button]:active:shadow-header-links flex h-full w-full flex-col flex-wrap justify-center sm:visible sm:flex-row sm:justify-evenly sm:text-white [&>li]:my-1 [&>li]:sm:my-0 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-base [&>li>a]:sm:py-3 [&>li>a]:lg:text-[26px] [&>li>a,button]:relative [&>li>a,button]:h-full [&>li>a,button]:w-full [&>li>a,button]:cursor-pointer [&>li>a,button]:rounded-full [&>li>a,button]:transition-shadow [&>li>a,button]:sm:m-0 [&>li>a,button]:sm:px-8"
+        class="text-fg-links-header [&>li>a,button]:hover:shadow-header-links [&>li>a,button]:active:shadow-header-links flex h-full w-full flex-col flex-wrap justify-center sm:visible sm:flex-row sm:justify-center sm:text-white md:justify-evenly [&>li]:my-1 [&>li]:sm:my-0 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-base [&>li>a]:sm:py-3 [&>li>a]:lg:text-[26px] [&>li>a,button]:relative [&>li>a,button]:h-full [&>li>a,button]:w-full [&>li>a,button]:cursor-pointer [&>li>a,button]:rounded-full [&>li>a,button]:transition-shadow [&>li>a,button]:sm:m-0 [&>li>a,button]:sm:px-8"
       >
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="/#about">Sobre mí</a></li>
+        <li><a href="/#projects">Proyectos</a></li>
+        <li><a href="/#experience">Experiencia</a></li>
+        <li><a href="/#contact">Contacto</a></li>
         <li class="mx-auto h-px w-11/12 rounded-full bg-gray-400 sm:hidden"></li>
         <li
           class="group z-50 hidden self-center justify-self-center sm:flex md:justify-self-end"
@@ -61,76 +61,7 @@
             />
           </button>
         </li>
-        <li>
-          <div
-            popover="auto"
-            id="options-menu"
-            class="bg-bg-links-header/95 text-fg-links-header rounded-header-links sm:shadow-header-links relative w-full max-w-xs flex-col gap-1 p-2 text-base not-sm:flex sm:fixed sm:mt-4 sm:text-xl sm:open:flex [&>button]:flex [&>button]:w-full [&>button]:items-center [&>button]:justify-between [&>button]:gap-4 [&>button]:px-2 [&>button]:py-4 [&>button]:sm:mx-3 [&>button>span]:transition-transform [&>button>span]:group-hover:rotate-12"
-          >
-            <button id="change-translation" class="group">
-              Traducir
-              <span>
-                <app-icons name="translate" className="size-6 md:size-10"></app-icons>
-              </span>
-            </button>
-            <a
-              id="print-cv"
-              href="/cvs/cv-english.pdf"
-              class="group hover:shadow-header-links flex w-full items-center justify-between rounded-full px-2 py-4 transition-shadow sm:px-8"
-            >
-              Mirá mi CV
-              <span class="transition-transform group-hover:rotate-12">
-                <app-icons name="cv" className="size-6 md:size-10"></app-icons>
-              </span>
-            </a>
-            <button id="toggle-theme" class="group peer" popovertarget="themes">
-              Tema
-              <app-icons
-                name="selector"
-                className="size-4 md:size-8 rotate-90 transition-transform group-[:has(+_#themes:hover,+_#themes:popover-open)]:rotate-180"
-              />
-            </button>
-            <div
-              id="themes"
-              popover
-              class="bg-bg-links-header/95 text-fg-links-header rounded-header-links shadow-header-links fixed mx-5 my-8 w-full max-w-40 flex-col items-center justify-center py-2 open:flex sm:mx-3 sm:my-0 sm:gap-2 sm:px-3 md:max-w-2xs [&>button]:flex [&>button]:flex-col [&>button]:items-center [&>button]:justify-center [&>button]:px-8 [&>button]:py-3 [&>button]:text-center [&>button]:text-sm [&>button]:sm:flex-row [&>button]:sm:justify-between [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:sm:text-left [&>button]:sm:text-xl"
-            >
-              <button
-                [class]="currentTheme === 'system' ? 'active' : null"
-                (click)="changeTheme('system')"
-                class="group"
-              >
-                Ajuste del dispositivo
-                <app-icons
-                  name="sistem-config-theme"
-                  className="size-6 md:size-10 transition-transform group-hover:rotate-12"
-                />
-              </button>
-              <button
-                [class]="currentTheme === 'dark' ? 'active' : null"
-                (click)="changeTheme('dark')"
-                class="group"
-              >
-                Oscuro
-                <app-icons
-                  name="moon"
-                  className="size-6 md:size-10 [&>g>path]:stroke-fg-links-header transition-transform group-hover:rotate-12"
-                />
-              </button>
-              <button
-                [class]="currentTheme === 'light' ? 'active' : null"
-                (click)="changeTheme('light')"
-                class="group"
-              >
-                Claro
-                <app-icons
-                  name="sun"
-                  className="size-6 md:size-10 transition-transform group-hover:rotate-12"
-                />
-              </button>
-            </div>
-          </div>
-        </li>
+        <li><app-options-menu /></li>
       </ul>
     </div>
   </nav>

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "mainLinks": ["Sobre mí", "Proyectos", "Experiencia", "Contacto"],
+    "options": {
+      "translate": {
+        "name": "Traducir",
+        "children": ["Español", "Ingles"]
+      },
+      "cv": {
+        "name": "Mirá mi cv"
+      },
+      "theme": {
+        "name": "Tema",
+        "children": ["Ajuste del dispositivo", "Oscuro", "Claro"]
+      }
+    }
+  },
+  "sections": {
+    "projects": {
+      "title": "Mis proyectos"
+    },
+    "experience": {
+      "title": "Experiencia"
+    },
+    "contact": {
+      "title": "Contacto"
+    }
+  }
+}

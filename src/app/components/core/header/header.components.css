@@ -105,14 +105,25 @@ header {
   anchor-name: --change-theme;
 }
 
+#change-translation {
+  anchor-name: --translation;
+}
+
 #options-menu,
-#themes {
+#themes,
+#languages {
   inset: unset;
 }
 
 #options-menu {
   position-area: bottom;
   position-anchor: --options-button;
+}
+
+#languages {
+  position-anchor: --translation;
+  top: anchor(center);
+  right: anchor(left);
 }
 
 #themes {
@@ -125,8 +136,15 @@ header {
   box-shadow: var(--shadow-header-links);
 }
 
-@media screen and (width <= 650px) {
+@media screen and (width <= 640px) {
   #themes {
+    left: anchor(right);
+    top: anchor(center);
+    bottom: anchor(center);
+    position-area: center right;
+  }
+
+  #languages {
     left: anchor(right);
     top: anchor(center);
     bottom: anchor(center);
@@ -134,8 +152,16 @@ header {
   }
 }
 
-@media screen and (660px <= width <= 840px) {
+@media screen and (640px <= width <= 840px) {
   #themes {
+    top: anchor(bottom);
+    left: anchor(center);
+    right: anchor(center);
+    position-area: center bottom;
+  }
+
+  #languages {
+    position-anchor: --change-theme;
     margin-block: 10px;
     top: anchor(bottom);
     left: anchor(center);

@@ -17,7 +17,9 @@ export class App {
     this.themeService.getDeviceTheme()) as Theme
 
   constructor() {
-    window.localStorage.setItem('language', navigator.languages[0].split('-')[0])
+    if (window.localStorage.getItem('language') === null) {
+      window.localStorage.setItem('language', navigator.languages[0].split('-')[0])
+    }
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       this.themeService.changeTheme('system')
     })

@@ -5,13 +5,13 @@ import { Service } from '@angular/core'
 export class ThemeService {
   private $html = document.documentElement
 
-  getDeviceTheme = () => {
+  getDeviceTheme() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
     if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light'
     return 'dark'
   }
 
-  getCurrentTheme = (): Theme => {
+  getCurrentTheme(): Theme {
     return (window.localStorage.getItem('theme') ?? 'system') as Theme
   }
 

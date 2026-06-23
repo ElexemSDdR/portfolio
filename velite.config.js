@@ -2,9 +2,9 @@ import { defineCollection, defineConfig, s } from 'velite'
 
 // `s` extends Zod with some custom schemas
 
-const about = defineCollection({
-  name: 'About', // collection type name
-  pattern: 'about-me/**/*.md', // content files glob pattern
+const translateAbout = defineCollection({
+  name: 'Translate', // collection type name
+  pattern: 'translate/**/*.md', // content files glob pattern
   schema: s
     .object({
       slug: s.path(), // validate format, unique in posts collection
@@ -23,9 +23,47 @@ const about = defineCollection({
       content: s.markdown(), // transform markdown to html
     })
     // more additional fields (computed fields)
-    .transform((data) => ({ ...data, permalink: `/about/${data.slug}` })),
+    .transform((data) => ({ ...data, permalink: `/translate/${data.slug}` })),
+})
+
+const translatePageContent = defineCollection({
+  name: 'Translate', // collection type name
+  pattern: 'translate/**/*.json', // content files glob pattern
+  schema: s
+    .object({
+      slug: s.path(), // validate format, unique in posts collection
+      header: s.object({
+        mainLinks: s.array(s.string()),
+        options: s.object({
+          translate: s.object({
+            name: s.string(),
+            children: s.array(s.string()),
+          }),
+          cv: s.object({
+            name: s.string(),
+          }),
+          theme: s.object({
+            name: s.string(),
+            children: s.array(s.string()),
+          }),
+        }),
+      }),
+      sections: s.object({
+        projects: s.object({
+          title: s.string(),
+        }),
+        experience: s.object({
+          title: s.string(),
+        }),
+        contact: s.object({
+          title: s.string(),
+        }),
+      }),
+    })
+    // more additional fields (computed fields)
+    .transform((data) => ({ ...data, permalink: `/translate/${data.slug}` })),
 })
 
 export default defineConfig({
-  collections: { about },
+  collections: { translateAbout, translatePageContent },
 })

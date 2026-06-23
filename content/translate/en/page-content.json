@@ -1,0 +1,29 @@
+{
+  "header": {
+    "mainLinks": ["About me", "Projects", "Experiences", "Contact"],
+    "options": {
+      "translate": {
+        "name": "Translate",
+        "children": ["Spanish", "English"]
+      },
+      "cv": {
+        "name": "Look my cv"
+      },
+      "theme": {
+        "name": "Theme",
+        "children": ["Device preferences", "Dark", "Light"]
+      }
+    }
+  },
+  "sections": {
+    "projects": {
+      "title": "My projects"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "contact": {
+      "title": "Contact me"
+    }
+  }
+}

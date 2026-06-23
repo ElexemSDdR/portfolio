@@ -44,7 +44,7 @@ export interface Experience {
 
 export type Schema = 'project' | 'experience'
 
-export type Languages = 'en' | 'es'
+export type Language = 'en' | 'es'
 
 export type Theme = 'dark' | 'light' | 'system'
 
@@ -60,4 +60,40 @@ export interface AboutMeContent {
   position: string
   phoneNumber: string
   content: string
+}
+
+export interface PageContent {
+  slug: string
+  header: {
+    mainLinks: string[]
+    options: {
+      translate: {
+        name: string
+        children: string[]
+      }
+      cv: {
+        name: string
+      }
+      theme: {
+        name: string
+        children: string[]
+      }
+    }
+  }
+  sections: {
+    projects: {
+      title: string
+    }
+    experience: {
+      title: string
+    }
+    contact: {
+      title: string
+    }
+  }
+}
+
+export interface TranslatedContent {
+  about: AboutMeContent
+  pageContent: PageContent
 }
