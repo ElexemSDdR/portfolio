@@ -11,10 +11,14 @@ export class ThemeService {
     return 'dark'
   }
 
+  getCurrentTheme = (): Theme => {
+    return (window.localStorage.getItem('theme') ?? 'system') as Theme
+  }
+
   changeTheme(theme: Theme) {
     if (theme === 'system') {
       const systemTheme = this.getDeviceTheme()
-      window.localStorage.setItem('theme', systemTheme)
+      window.localStorage.setItem('theme', 'system')
       this.$html.style.colorScheme = systemTheme
       return
     }

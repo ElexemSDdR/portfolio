@@ -95,21 +95,33 @@
               popover
               class="bg-bg-links-header/95 text-fg-links-header rounded-header-links shadow-header-links fixed mx-5 my-8 w-full max-w-40 flex-col items-center justify-center py-2 open:flex sm:mx-3 sm:my-0 sm:gap-2 sm:px-3 md:max-w-2xs [&>button]:flex [&>button]:flex-col [&>button]:items-center [&>button]:justify-center [&>button]:px-8 [&>button]:py-3 [&>button]:text-center [&>button]:text-sm [&>button]:sm:flex-row [&>button]:sm:justify-between [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:sm:text-left"
             >
-              <button (click)="changeTheme('system')" class="group">
+              <button
+                [class]="currentTheme === 'system' ? 'active' : null"
+                (click)="changeTheme('system')"
+                class="group"
+              >
                 Ajuste del dispositivo
                 <app-icons
                   name="sistem-config-theme"
                   className="size-6 md:size-10 transition-transform group-hover:-rotate-12"
                 />
               </button>
-              <button (click)="changeTheme('dark')" class="group">
+              <button
+                [class]="currentTheme === 'dark' ? 'active' : null"
+                (click)="changeTheme('dark')"
+                class="group"
+              >
                 Oscuro
                 <app-icons
                   name="moon"
                   className="size-6 md:size-10 [&>g>path]:stroke-fg-links-header transition-transform group-hover:-rotate-12"
                 />
               </button>
-              <button (click)="changeTheme('light')" class="group">
+              <button
+                [class]="currentTheme === 'light' ? 'active' : null"
+                (click)="changeTheme('light')"
+                class="group"
+              >
                 Claro
                 <app-icons
                   name="sun"
