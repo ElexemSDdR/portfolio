@@ -19,9 +19,9 @@ export type Icon =
   | 'translate'
   | 'options'
   | 'selector'
-  | 'sun'
-  | 'moon'
-  | 'sistem-config-theme'
+  | 'light'
+  | 'dark'
+  | 'system'
 
 export type Technology = keyof typeof TechnologiesColors
 
@@ -62,35 +62,32 @@ export interface AboutMeContent {
   content: string
 }
 
+type Option<T extends string> = Record<
+  T,
+  {
+    name: string
+    children?: string[]
+  }
+>
+
+type Section<T extends string> = Record<
+  T,
+  {
+    title: string
+  }
+>
+
+export type OptionsHeader = Option<'translate' | 'cv' | 'theme'>
+
+export type Sections = Section<'projects' | 'experience' | 'contact'>
+
 export interface PageContent {
   slug: string
   header: {
     mainLinks: string[]
-    options: {
-      translate: {
-        name: string
-        children: string[]
-      }
-      cv: {
-        name: string
-      }
-      theme: {
-        name: string
-        children: string[]
-      }
-    }
+    options: OptionsHeader
   }
-  sections: {
-    projects: {
-      title: string
-    }
-    experience: {
-      title: string
-    }
-    contact: {
-      title: string
-    }
-  }
+  sections: Sections
 }
 
 export interface TranslatedContent {

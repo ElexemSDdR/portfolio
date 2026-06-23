@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router'
 import { FooterComponent } from '@components/core/footer/footer.component'
 import { HeaderComponent } from '@components/core/header/header.component'
 import { ThemeService } from '@services/theme.service'
+import { TranslateService } from './services/translate.service'
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,11 @@ import { ThemeService } from '@services/theme.service'
 })
 export class App {
   private themeService = inject(ThemeService)
+  private translateService = inject(TranslateService)
   private currentTheme = (window.localStorage.getItem('theme') ??
     this.themeService.getDeviceTheme()) as Theme
+
+  currentLanguage = this.translateService.getCurrentLanguage()
 
   constructor() {
     if (window.localStorage.getItem('language') === null) {

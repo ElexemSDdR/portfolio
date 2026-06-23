@@ -47,6 +47,10 @@
   }
 }
 
+.active {
+  box-shadow: var(--shadow-header-links);
+}
+
 @keyframes header-anchor-animation {
   from {
     padding-block: var(--anchor-padding-block-initial);
@@ -130,10 +134,6 @@ header {
   position-anchor: --change-theme;
   top: anchor(center);
   right: anchor(left);
-}
-
-.active {
-  box-shadow: var(--shadow-header-links);
 }
 
 @media screen and (width <= 640px) {

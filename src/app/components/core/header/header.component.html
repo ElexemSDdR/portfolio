@@ -45,10 +45,11 @@
       <ul
         class="text-fg-links-header [&>li>a,button]:hover:shadow-header-links [&>li>a,button]:active:shadow-header-links flex h-full w-full flex-col flex-wrap justify-center sm:visible sm:flex-row sm:justify-center sm:text-white md:justify-evenly [&>li]:my-1 [&>li]:sm:my-0 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-base [&>li>a]:sm:py-3 [&>li>a]:lg:text-[26px] [&>li>a,button]:relative [&>li>a,button]:h-full [&>li>a,button]:w-full [&>li>a,button]:cursor-pointer [&>li>a,button]:rounded-full [&>li>a,button]:transition-shadow [&>li>a,button]:sm:m-0 [&>li>a,button]:sm:px-8"
       >
-        <li><a href="/#about">Sobre mí</a></li>
-        <li><a href="/#projects">Proyectos</a></li>
-        <li><a href="/#experience">Experiencia</a></li>
-        <li><a href="/#contact">Contacto</a></li>
+        @for (link of translatedHeaderContent().links; track $index) {
+          <li>
+            <a [href]="link.href">{{ link.name }}</a>
+          </li>
+        }
         <li class="mx-auto h-px w-11/12 rounded-full bg-gray-400 sm:hidden"></li>
         <li
           class="group z-50 hidden self-center justify-self-center sm:flex md:justify-self-end"
@@ -61,7 +62,7 @@
             />
           </button>
         </li>
-        <li><app-options-menu /></li>
+        <li><app-options-menu [optionsTranslated]="translatedHeaderContent().options" /></li>
       </ul>
     </div>
   </nav>
