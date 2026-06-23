@@ -36,4 +36,4 @@ Se usa también _prettier_ para acomodar mejor los archivos de angular (los .ts 
 
 - [x] Cambio de tema
 - [ ] Traducción
-- [ ] Descarga y visualización de mi CV
+- [x] Descarga y visualización de mi CV
