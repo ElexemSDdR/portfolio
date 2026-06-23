@@ -92,18 +92,6 @@ header {
   }
 }
 
-@position-try --monitor-media {
-  /* top: anchor(top);
-  right: anchor(left); */
-  position-area: center left;
-}
-
-@position-try --phone-media {
-  /* top: anchor(bottom);
-  left: anchor(right); */
-  position-area: center right;
-}
-
 #options-button,
 #toggle-theme {
   anchor-scope: unset;
@@ -136,6 +124,8 @@ header {
 @media screen and (width <= 650px) {
   #themes {
     left: anchor(right);
+    top: anchor(center);
+    bottom: anchor(center);
     position-area: center right;
   }
 }
