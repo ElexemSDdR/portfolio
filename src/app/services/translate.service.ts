@@ -24,6 +24,10 @@ export class TranslateService {
     return this.currentLanguage
   }
 
+  getTranslatedSectionTitles() {
+    return this.getTranslatedContent(this.currentLanguage).pageContent.sections
+  }
+
   changeLanguage(lang: Language) {
     this.currentLanguage = lang
     window.localStorage.setItem('language', lang)

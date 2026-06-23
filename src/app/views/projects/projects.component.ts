@@ -1,4 +1,5 @@
 import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
+import { TranslateService } from '@/app/services/translate.service'
 import type { Project } from '@/types'
 import { Component, inject } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
@@ -12,7 +13,11 @@ import { ApiService } from '@services/api.service'
   styles: ``,
 })
 export class ProjectsComponent {
-  portfolioApi = inject(ApiService)
+  private translateService = inject(TranslateService)
+  private portfolioApi = inject(ApiService)
+  currentLanguage = this.translateService.getCurrentLanguage()
+
+  sectionTitle = this.translateService.getTranslatedSectionTitles().projects.title
 
   projects = toSignal(this.portfolioApi.get<Project[]>('project'), {
     initialValue: [] as Project[],

@@ -1,7 +1,7 @@
 <app-section-container
   className="items-center justify-center gap-10 pt-30 2xl:pt-60 animate-range-[entry_25%_contain_40%]"
   id="projects"
-  title="Mis proyectos"
+  [title]="sectionTitle"
 >
   <section class="grid grid-cols-1 gap-4 md:grid-cols-2">
     @for (project of projects(); track project.id) {

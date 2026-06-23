@@ -1,5 +1,6 @@
 import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
-import { Component } from '@angular/core'
+import { TranslateService } from '@/app/services/translate.service'
+import { Component, inject } from '@angular/core'
 
 @Component({
   selector: 'app-contact',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core'
   templateUrl: './contact.component.html',
   styles: ``,
 })
-export class ContactComponent {}
+export class ContactComponent {
+  private translateService = inject(TranslateService)
+  currentLanguage = this.translateService.getCurrentLanguage()
+
+  sectionTitle = this.translateService.getTranslatedSectionTitles().contact.title
+}

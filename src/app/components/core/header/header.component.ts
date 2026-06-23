@@ -1,6 +1,5 @@
 import { TranslateService } from '@/app/services/translate.service'
-import { Language } from '@/types'
-import { Component, computed, inject, input } from '@angular/core'
+import { Component, computed, inject } from '@angular/core'
 import { IconsComponent } from '@components/utilities/icons/icons.component'
 import { OptionsMenuComponent } from './options-menu/options-menu.component'
 
@@ -13,10 +12,10 @@ import { OptionsMenuComponent } from './options-menu/options-menu.component'
 export class HeaderComponent {
   private translateService = inject(TranslateService)
   headerLinksHref = ['/#about', '/#projects', '/#experience', '/#contact']
-  language = input.required<Language>()
+  currentLanguage = this.translateService.getCurrentLanguage()
 
   translatedHeaderContent = computed(() => {
-    const content = this.translateService.getTranslatedContent(this.language()).pageContent
+    const content = this.translateService.getTranslatedContent(this.currentLanguage).pageContent
     const {
       header: { mainLinks, options },
     } = content
