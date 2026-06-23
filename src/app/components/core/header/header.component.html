@@ -38,12 +38,12 @@
       </svg>
     </button>
     <div
-      class="peer bg-bg-links-header/95 rounded-header-links shadow-header-links fixed mx-2 my-18 w-full max-w-44 px-2 py-1 transition-transform sm:relative sm:m-0 sm:flex sm:w-full sm:bg-transparent sm:shadow-none"
+      class="peer bg-bg-links-header/95 rounded-header-links shadow-header-links fixed mx-2 my-18 w-full px-2 py-1 transition-transform not-sm:max-w-44 sm:relative sm:m-0 sm:flex sm:w-full sm:bg-transparent sm:shadow-none"
       popover
       id="header-links"
     >
       <ul
-        class="text-fg-links-header [&>li>a,button]:hover:shadow-header-links [&>li>a,button]:active:shadow-header-links flex h-full w-full flex-col flex-wrap justify-center sm:visible sm:flex-row sm:text-white lg:justify-evenly [&>li]:my-1 [&>li]:sm:my-0 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-base [&>li>a]:sm:py-3 [&>li>a]:lg:text-[26px] [&>li>a,button]:relative [&>li>a,button]:h-full [&>li>a,button]:w-full [&>li>a,button]:cursor-pointer [&>li>a,button]:rounded-full [&>li>a,button]:transition-shadow [&>li>a,button]:sm:m-0 [&>li>a,button]:sm:px-8"
+        class="text-fg-links-header [&>li>a,button]:hover:shadow-header-links [&>li>a,button]:active:shadow-header-links flex h-full w-full flex-col flex-wrap justify-center sm:visible sm:flex-row sm:justify-evenly sm:text-white [&>li]:my-1 [&>li]:sm:my-0 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:px-3 [&>li>a]:py-2 [&>li>a]:text-base [&>li>a]:sm:py-3 [&>li>a]:lg:text-[26px] [&>li>a,button]:relative [&>li>a,button]:h-full [&>li>a,button]:w-full [&>li>a,button]:cursor-pointer [&>li>a,button]:rounded-full [&>li>a,button]:transition-shadow [&>li>a,button]:sm:m-0 [&>li>a,button]:sm:px-8"
       >
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#projects">Proyectos</a></li>
@@ -65,7 +65,7 @@
           <div
             popover="auto"
             id="options-menu"
-            class="sm:text-md bg-bg-links-header/95 text-fg-links-header rounded-header-links sm:shadow-header-links relative w-full max-w-xs flex-col gap-1 p-2 text-base not-sm:flex sm:fixed sm:mt-4 sm:open:flex [&>button]:flex [&>button]:w-full [&>button]:items-center [&>button]:justify-between [&>button]:gap-4 [&>button]:px-2 [&>button]:py-4 [&>button]:sm:mx-3 [&>button>span]:transition-transform [&>button>span]:group-hover:rotate-12"
+            class="bg-bg-links-header/95 text-fg-links-header rounded-header-links sm:shadow-header-links relative w-full max-w-xs flex-col gap-1 p-2 text-base not-sm:flex sm:fixed sm:mt-4 sm:text-xl sm:open:flex [&>button]:flex [&>button]:w-full [&>button]:items-center [&>button]:justify-between [&>button]:gap-4 [&>button]:px-2 [&>button]:py-4 [&>button]:sm:mx-3 [&>button>span]:transition-transform [&>button>span]:group-hover:rotate-12"
           >
             <button id="change-translation" class="group">
               Traducir
@@ -93,7 +93,7 @@
             <div
               id="themes"
               popover
-              class="bg-bg-links-header/95 text-fg-links-header rounded-header-links shadow-header-links fixed mx-5 my-8 w-full max-w-40 flex-col items-center justify-center py-2 open:flex sm:mx-3 sm:my-0 sm:gap-2 sm:px-3 md:max-w-2xs [&>button]:flex [&>button]:flex-col [&>button]:items-center [&>button]:justify-center [&>button]:px-8 [&>button]:py-3 [&>button]:text-center [&>button]:text-sm [&>button]:sm:flex-row [&>button]:sm:justify-between [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:sm:text-left"
+              class="bg-bg-links-header/95 text-fg-links-header rounded-header-links shadow-header-links fixed mx-5 my-8 w-full max-w-40 flex-col items-center justify-center py-2 open:flex sm:mx-3 sm:my-0 sm:gap-2 sm:px-3 md:max-w-2xs [&>button]:flex [&>button]:flex-col [&>button]:items-center [&>button]:justify-center [&>button]:px-8 [&>button]:py-3 [&>button]:text-center [&>button]:text-sm [&>button]:sm:flex-row [&>button]:sm:justify-between [&>button]:sm:px-2 [&>button]:sm:py-4 [&>button]:sm:text-left [&>button]:sm:text-xl"
             >
               <button
                 [class]="currentTheme === 'system' ? 'active' : null"
