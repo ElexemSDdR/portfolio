@@ -22,6 +22,8 @@ export type Icon =
   | 'light'
   | 'dark'
   | 'system'
+  | 'gmail'
+  | 'whatsapp'
 
 export type Technology = keyof typeof TechnologiesColors
 

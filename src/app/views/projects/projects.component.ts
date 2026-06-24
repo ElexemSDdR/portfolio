@@ -19,7 +19,7 @@ export class ProjectsComponent {
 
   sectionTitle = this.translateService.getTranslatedSectionTitles().projects.title
 
-  projects = toSignal(this.portfolioApi.get<Project[]>('project'), {
+  projects = toSignal(this.portfolioApi.get<Project[]>('project', this.currentLanguage), {
     initialValue: [] as Project[],
   })
 }

@@ -23,7 +23,9 @@
   </div>
   <a
     id="print-cv"
-    href="/cvs/cv-english.pdf"
+    href="/cvs/cv-{{ currentLanguage }}.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
     class="group hover:shadow-header-links flex w-full items-center justify-between rounded-full px-2 py-4 transition-shadow sm:px-8"
   >
     {{ optionsTranslated().cv.name }}

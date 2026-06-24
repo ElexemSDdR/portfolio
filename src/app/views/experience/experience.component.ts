@@ -18,7 +18,10 @@ export class ExperienceComponent {
 
   sectionTitle = this.translateService.getTranslatedSectionTitles().experience.title
 
-  experiences: Signal<Experience[]> = toSignal(this.apiPortfolio.get('experience'), {
-    initialValue: [] as Experience[],
-  })
+  experiences: Signal<Experience[]> = toSignal(
+    this.apiPortfolio.get('experience', this.currentLanguage),
+    {
+      initialValue: [] as Experience[],
+    },
+  )
 }

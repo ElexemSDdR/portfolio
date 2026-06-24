@@ -1,10 +1,11 @@
+import { IconsComponent } from '@/app/components/utilities/icons/icons.component'
 import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
 import { TranslateService } from '@/app/services/translate.service'
 import { Component, inject } from '@angular/core'
 
 @Component({
   selector: 'app-contact',
-  imports: [SectionContainerComponent],
+  imports: [SectionContainerComponent, IconsComponent],
   templateUrl: './contact.component.html',
   styles: ``,
 })
