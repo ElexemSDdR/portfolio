@@ -9,6 +9,6 @@ export class ApiService {
   private apiUrl = 'https://portfolio-backend-nu-lake.vercel.app/'
 
   get<T extends Project[] | Experience[]>(schema: Schema, lang: Language): Observable<T> {
-    return this.http.get<T>(`${this.apiUrl}${schema}`)
+    return this.http.get<T>(`${this.apiUrl}${schema}?lang=${lang}`)
   }
 }
