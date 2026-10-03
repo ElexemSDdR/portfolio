@@ -2,7 +2,7 @@ import { Experience, Language, Project, Resource } from '@/types'
 import { HttpClient } from '@angular/common/http'
 import { Service, inject } from '@angular/core'
 import { Observable } from 'rxjs'
-import { environment } from '@/environments/environment.development'
+import { environment } from '@/environments/environment'
 
 @Service()
 export class ApiService {

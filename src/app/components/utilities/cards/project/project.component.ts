@@ -11,7 +11,6 @@ import { IconsComponent } from '@components/utilities/icons/icons.component'
 export class ProjectComponent {
   project = input.required<Project>()
   animateSide = input.required<AnimateSide>()
-  apiUrl = 'https://portfolio-backend-nu-lake.vercel.app/'
 
   technologyClass = (technology: string) => {
     if (technology.includes('.')) technology = technology.split('.').join('')
