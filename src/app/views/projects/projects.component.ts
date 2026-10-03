@@ -1,8 +1,7 @@
 import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
 import { TranslateService } from '@/app/services/translate.service'
 import type { Project } from '@/types'
-import { Component, inject } from '@angular/core'
-import { toSignal } from '@angular/core/rxjs-interop'
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core'
 import { ProjectComponent } from '@components/utilities/cards/project/project.component'
 import { ApiService } from '@services/api.service'
 
@@ -12,14 +11,30 @@ import { ApiService } from '@services/api.service'
   templateUrl: './projects.component.html',
   styles: ``,
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   private translateService = inject(TranslateService)
   private portfolioApi = inject(ApiService)
+  private cdr = inject(ChangeDetectorRef)
+
+  projects: Project[] = []
   currentLanguage = this.translateService.getCurrentLanguage()
 
   sectionTitle = this.translateService.getTranslatedSectionTitles().projects.title
 
-  projects = toSignal(this.portfolioApi.get<Project[]>('project', this.currentLanguage), {
-    initialValue: [] as Project[],
-  })
+  ngOnInit(): void {
+    this.portfolioApi.get<Project[]>('project', this.currentLanguage).subscribe({
+      next: (data) => {
+        console.log(data)
+        this.projects = data
+      },
+      error: (error: unknown) => {
+        console.error(error)
+      },
+      complete: () => {
+        this.cdr.detectChanges()
+        console.log('Fetch ended')
+      }
+    })
+  }
 }
+

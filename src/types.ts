@@ -44,7 +44,7 @@ export interface Experience {
   jobPosition: string
 }
 
-export type Schema = 'project' | 'experience'
+export type Resource = 'project' | 'experience'
 
 export type Language = 'en' | 'es'
 

@@ -5,12 +5,12 @@
 >
   <a [href]="project().url" target="_blank" class="relative">
     <img
-      ngSrc="{{ apiUrl }}{{ project().previewImage }}"
+      ngSrc="{{ project().previewImage }}"
       priority
       width="1200"
       height="750"
       alt="Imágen de vista previa para {{ project().title }}"
-      class="aspect-auto h-auto"
+      class="aspect-16/9 w-full"
     />
     <div
       class="to-project-card-bg absolute bottom-0 left-0 h-full w-full bg-linear-to-b from-transparent transition-colors hover:bg-black/20 active:bg-black/20"
@@ -38,7 +38,7 @@
     {{ project().description }}
   </p>
   <div class="mx-auto my-4 h-px w-[95%] rounded-full bg-[light-dark(black,white)]/55"></div>
-  <ul class="mb-2 flex flex-wrap gap-2 px-4">
+  <ul class="mb-2 flex gap-2 px-4 flex-wrap">
     @for (technology of project().technologies; track technology) {
       <li [class]="technologyClass(technology.toLowerCase())">
         {{ technology }}
