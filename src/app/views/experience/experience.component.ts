@@ -22,8 +22,18 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiPortfolio.get<Experience[]>('experience', this.currentLanguage).subscribe({
-      next: (data) => {
-        this.experiences = data
+      next: (data: Experience[]) => {
+        this.experiences = data.sort((older, newer) => {
+          const firstStartDate = older.date.split('-').map((dates) => dates.trim())[0]
+          const firstEndDate = older.date.split('-').map((dates) => dates.trim())[1]
+
+          const secondStartDate = newer.date.split('-').map((dates) => dates.trim())[0]
+          const secondEndDate = newer.date.split('-').map((dates) => dates.trim())[1]
+
+          if (firstEndDate === 'Actual' || secondEndDate === 'Actual') return -999999
+
+          return Number(secondStartDate) - Number(firstStartDate)
+        })
       },
       error: (error: unknown) => {
         console.error(error)

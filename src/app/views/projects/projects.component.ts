@@ -24,7 +24,6 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.portfolioApi.get<Project[]>('project', this.currentLanguage).subscribe({
       next: (data) => {
-        console.log(data)
         this.projects = data
       },
       error: (error: unknown) => {
@@ -32,7 +31,6 @@ export class ProjectsComponent implements OnInit {
       },
       complete: () => {
         this.cdr.detectChanges()
-        console.log('Fetch ended')
       }
     })
   }
