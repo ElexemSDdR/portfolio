@@ -1,16 +1,16 @@
 <article
   class="flex flex-col rounded-4xl pb-2 text-primary-text overflow-hidden bg-project-card-bg relative shadow-project-card animate-range-[entry_0%_cover_25%] timeline-view hover:scale-105 hover:z-30 hover:-translate-y-2 active:scale-105 active:z-30 active:-translate-y-2 transition-transform {{
-    animateSide()
+    animateSide() ? animateSide() : ''
   }}"
 >
   <a [href]="project().url" target="_blank" class="relative">
     <img
-      ngSrc="{{ project().previewImage }}"
+      [ngSrc]="project().previewImage.split(cloudinaryBucket)[1]"
       priority
       width="1200"
       height="750"
       alt="Imágen de vista previa para {{ project().title }}"
-      class="aspect-16/9 w-full"
+      class="aspect-video size-auto"
     />
     <div
       class="to-project-card-bg absolute bottom-0 left-0 h-full w-full bg-linear-to-b from-transparent transition-colors hover:bg-black/20 active:bg-black/20"
