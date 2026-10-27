@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router'
 
 import { routes } from '@/app/app.routes'
 import { provideMarkdown } from 'ngx-markdown'
+import { provideCloudinaryLoader } from '@angular/common'
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -11,5 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideMarkdown(),
+    provideCloudinaryLoader('https://res.cloudinary.com/kodcbluw')
   ],
 }

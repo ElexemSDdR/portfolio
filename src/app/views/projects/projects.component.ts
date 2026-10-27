@@ -1,9 +1,9 @@
-import { SectionContainerComponent } from '@/app/components/utilities/section-container/section-container.component'
-import { TranslateService } from '@/app/services/translate.service'
-import type { Project } from '@/types'
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core'
+import { SectionContainerComponent } from '@components/utilities/section-container/section-container.component'
 import { ProjectComponent } from '@components/utilities/cards/project/project.component'
+import { TranslateService } from '@services/translate.service'
 import { ApiService } from '@services/api.service'
+import type { Project } from '@/types'
 
 @Component({
   selector: 'app-projects',
@@ -17,6 +17,7 @@ export class ProjectsComponent implements OnInit {
   private cdr = inject(ChangeDetectorRef)
 
   projects: Project[] = []
+  isPending = true
   currentLanguage = this.translateService.getCurrentLanguage()
 
   sectionTitle = this.translateService.getTranslatedSectionTitles().projects.title
@@ -30,6 +31,7 @@ export class ProjectsComponent implements OnInit {
         console.error(error)
       },
       complete: () => {
+        this.isPending = false
         this.cdr.detectChanges()
       }
     })

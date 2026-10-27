@@ -12,6 +12,8 @@ export class ProjectComponent {
   project = input.required<Project>()
   animateSide = input.required<AnimateSide>()
 
+  cloudinaryBucket = 'https://res.cloudinary.com/kodcbluw/image/upload'
+
   technologyClass = (technology: string) => {
     if (technology.includes('.')) technology = technology.split('.').join('')
     return `rounded-full py-1 px-3 text-sm align-middle text-center ${TechnologiesColors[technology as Technology]}`
